@@ -6,12 +6,13 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 
 import app.models  # noqa: F401
 from app.core.config import settings
 from app.core.database import check_database
 from app.core.errors import register_exception_handlers
-from app.routers import auth, contracts, health, payments, templates
+from app.routers import auth, contracts, health, oauth, payments, templates
 
 logger = logging.getLogger(__name__)
 
@@ -51,9 +52,12 @@ def create_app() -> FastAPI:
         expose_headers=["Content-Disposition"],
     )
 
+    application.add_middleware(SessionMiddleware, secret_key=settings.jwt_secret)
+
     prefix = settings.api_prefix
     application.include_router(health.router, prefix=prefix)
     application.include_router(auth.router, prefix=prefix)
+    application.include_router(oauth.router, prefix=prefix)
     application.include_router(contracts.router, prefix=prefix)
     application.include_router(templates.router, prefix=prefix)
     application.include_router(payments.router, prefix=prefix)

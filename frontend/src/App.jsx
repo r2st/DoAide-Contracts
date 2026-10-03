@@ -25,6 +25,7 @@ import SettingsPage from "./pages/SettingsPage";
 import TemplateDetailPage from "./pages/TemplateDetailPage";
 import TemplateLibraryPage from "./pages/TemplateLibraryPage";
 import UploadPage from "./pages/UploadPage";
+import AuthCallbackPage from "./pages/AuthCallbackPage";
 
 function Protected({ children }) {
   const { user, loading } = useAuth();
@@ -67,6 +68,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/auth/callback" element={<AuthCallbackPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/pricing" element={<PricingPage />} />

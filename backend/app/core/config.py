@@ -40,6 +40,14 @@ class Settings(BaseSettings):
     openrouter_timeout_seconds: float = 90.0
     openrouter_max_attempts: int = Field(default=3, ge=1, le=10)
 
+    google_client_id: str = ""
+    google_client_secret: str = ""
+    github_client_id: str = ""
+    github_client_secret: str = ""
+    microsoft_client_id: str = ""
+    microsoft_client_secret: str = ""
+    oauth_redirect_base: str = "http://localhost:3009"
+
     upload_dir: str = "./data/uploads"
     max_upload_mb: int = 25
 

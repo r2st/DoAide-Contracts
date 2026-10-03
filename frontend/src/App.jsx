@@ -3,9 +3,17 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Shell from "./components/Shell";
 import { SkeletonPanel } from "./components/Skeleton";
 import { useAuth } from "./hooks/useAuth";
+import BlogLayout, { BlogIndex } from "./pages/BlogLayout";
+import NdaTemplateGuide from "./pages/blog/NdaTemplateGuide";
+import EmploymentContractChecklist from "./pages/blog/EmploymentContractChecklist";
+import FreelancerAgreementGuide from "./pages/blog/FreelancerAgreementGuide";
+import CheckerPage from "./pages/CheckerPage";
 import ContractViewPage from "./pages/ContractViewPage";
 import DashboardPage from "./pages/DashboardPage";
+import EmbedPage from "./pages/EmbedPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import FreeGeneratorPage from "./pages/FreeGeneratorPage";
+import FreeTemplatesPage from "./pages/FreeTemplatesPage";
 import GeneratorPage from "./pages/GeneratorPage";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
@@ -14,6 +22,7 @@ import PricingPage from "./pages/PricingPage";
 import RegisterPage from "./pages/RegisterPage";
 import ReviewPage from "./pages/ReviewPage";
 import SettingsPage from "./pages/SettingsPage";
+import TemplateDetailPage from "./pages/TemplateDetailPage";
 import TemplateLibraryPage from "./pages/TemplateLibraryPage";
 import UploadPage from "./pages/UploadPage";
 
@@ -61,6 +70,23 @@ export default function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+
+      {/* Public free tools — no login needed */}
+      <Route path="/templates" element={<FreeTemplatesPage />} />
+      <Route path="/template/:slug" element={<TemplateDetailPage />} />
+      <Route path="/generator" element={<FreeGeneratorPage />} />
+      <Route path="/checker" element={<CheckerPage />} />
+      <Route path="/embed" element={<EmbedPage />} />
+
+      {/* Blog / SEO pages */}
+      <Route path="/blog" element={<BlogLayout />}>
+        <Route index element={<BlogIndex />} />
+        <Route path="free-nda-template-india-2026" element={<NdaTemplateGuide />} />
+        <Route path="employment-contract-checklist" element={<EmploymentContractChecklist />} />
+        <Route path="freelancer-agreement-guide" element={<FreelancerAgreementGuide />} />
+      </Route>
+
+      {/* Authenticated routes */}
       <Route
         path="/review/upload"
         element={<Protected><UploadPage /></Protected>}
@@ -82,7 +108,7 @@ export default function App() {
         element={<Protected><ContractViewPage /></Protected>}
       />
       <Route
-        path="/templates"
+        path="/my-templates"
         element={<Protected><MyTemplatesPage /></Protected>}
       />
       <Route

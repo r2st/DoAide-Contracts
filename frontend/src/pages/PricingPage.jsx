@@ -1,58 +1,149 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { useAuth } from "../hooks/useAuth";
 import ThemeToggle from "../components/ThemeToggle";
+import { api } from "../lib/api";
 
 const PLANS = [
   {
+    key: "free",
     name: "Free",
     price: "₹0",
+    priceNum: 0,
     period: "forever",
     cta: "Get started",
     highlight: false,
     features: [
-      "3 contract reviews / month",
-      "2 contract generations / month",
-      "10+ Indian-specific templates",
+      "3 contracts/month",
+      "Basic templates",
       "PDF risk reports",
       "Email support",
     ],
   },
   {
+    key: "pro",
     name: "Pro",
-    price: "₹2,399",
+    price: "₹399",
+    priceNum: 399,
     period: "/month",
-    cta: "Start free trial",
+    cta: "Subscribe",
     highlight: true,
     features: [
-      "Unlimited contract reviews",
-      "20 contract generations / month",
+      "Unlimited contracts",
+      "E-signatures",
       "Custom templates",
+      "Export to PDF/Word",
       "Version comparison",
-      "Hindi language support",
-      "DoAide Desk & Realty integration",
-      "Priority email support",
+      "Priority support",
     ],
   },
   {
-    name: "Business",
-    price: "₹8,199",
+    key: "enterprise",
+    name: "Enterprise",
+    price: "₹1,499",
+    priceNum: 1499,
     period: "/month",
-    cta: "Contact sales",
+    cta: "Subscribe",
     highlight: false,
     features: [
       "Everything in Pro",
-      "Unlimited generations",
       "API access",
-      "Up to 10 team members",
-      "White-label branding",
-      "Email + chat support",
-      "Custom integrations",
+      "Team collaboration",
+      "Audit trail",
+      "Compliance reporting",
+      "Dedicated support",
     ],
   },
 ];
 
+function loadRazorpayScript() {
+  return new Promise((resolve) => {
+    if (document.getElementById("razorpay-script")) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.id = "razorpay-script";
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+}
+
 export default function PricingPage() {
   usePageTitle("Pricing");
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [busy, setBusy] = useState(null);
+  const [error, setError] = useState("");
+
+  async function handleSubscribe(planKey) {
+    if (!user) {
+      navigate("/register");
+      return;
+    }
+
+    if (user.plan === planKey) return;
+
+    if (planKey === "free") {
+      navigate("/settings");
+      return;
+    }
+
+    setError("");
+    setBusy(planKey);
+
+    try {
+      const loaded = await loadRazorpayScript();
+      if (!loaded) {
+        setError("Failed to load payment gateway. Please try again.");
+        setBusy(null);
+        return;
+      }
+
+      const sub = await api.createSubscription(planKey);
+
+      const options = {
+        key: sub.razorpay_key_id,
+        subscription_id: sub.subscription_id,
+        name: "DoAide Contracts",
+        description: `${planKey === "pro" ? "Pro" : "Enterprise"} Plan`,
+        handler: async function (response) {
+          try {
+            await api.verifyPayment({
+              razorpay_subscription_id: response.razorpay_subscription_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            });
+            navigate("/settings");
+            window.location.reload();
+          } catch (err) {
+            setError(err.message || "Payment verification failed.");
+          } finally {
+            setBusy(null);
+          }
+        },
+        prefill: {
+          email: user.email,
+          name: user.name,
+        },
+        theme: {
+          color: "#2563eb",
+        },
+        modal: {
+          ondismiss: () => setBusy(null),
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      setError(err.message || "Could not start payment.");
+      setBusy(null);
+    }
+  }
 
   return (
     <div style={{ minHeight: "100vh", background: "var(--canvas)", padding: "2rem 1.5rem" }}>
@@ -75,47 +166,68 @@ export default function PricingPage() {
           </p>
         </div>
 
+        {error && (
+          <div className="banner" style={{ background: "var(--danger-bg)", color: "var(--danger)", marginBottom: "1.5rem", textAlign: "center" }}>
+            {error}
+          </div>
+        )}
+
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
-          {PLANS.map((plan) => (
-            <div
-              key={plan.name}
-              className="panel"
-              style={{
-                borderColor: plan.highlight ? "var(--brand)" : undefined,
-                borderWidth: plan.highlight ? 2 : undefined,
-                position: "relative",
-              }}
-            >
-              {plan.highlight && (
-                <div style={{
-                  position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
-                  background: "var(--brand)", color: "var(--brand-text)",
-                  padding: "2px 12px", borderRadius: 999, fontSize: "0.75rem", fontWeight: 700,
-                }}>
-                  Most popular
-                </div>
-              )}
-              <h2 style={{ margin: "0 0 0.5rem" }}>{plan.name}</h2>
-              <div style={{ display: "flex", alignItems: "baseline", gap: "0.25rem", marginBottom: "1rem" }}>
-                <span style={{ fontSize: "2rem", fontWeight: 700, color: "var(--ink-strong)" }}>{plan.price}</span>
-                <span style={{ color: "var(--ink-soft)", fontSize: "0.9rem" }}>{plan.period}</span>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem" }}>
-                {plan.features.map((f) => (
-                  <li key={f} style={{ padding: "0.35rem 0", fontSize: "0.9rem", color: "var(--ink)", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span style={{ color: "var(--good)", fontWeight: 700 }}>✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/register"
-                className={`btn ${plan.highlight ? "btn-primary" : "btn-ghost"}`}
-                style={{ display: "block", textAlign: "center" }}
+          {PLANS.map((plan) => {
+            const isCurrent = user?.plan === plan.key;
+
+            return (
+              <div
+                key={plan.name}
+                className="panel"
+                style={{
+                  borderColor: plan.highlight ? "var(--brand)" : undefined,
+                  borderWidth: plan.highlight ? 2 : undefined,
+                  position: "relative",
+                }}
               >
-                {plan.cta}
-              </Link>
-            </div>
-          ))}
+                {plan.highlight && (
+                  <div style={{
+                    position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
+                    background: "var(--brand)", color: "var(--brand-text)",
+                    padding: "2px 12px", borderRadius: 999, fontSize: "0.75rem", fontWeight: 700,
+                  }}>
+                    Most popular
+                  </div>
+                )}
+                <h2 style={{ margin: "0 0 0.5rem" }}>{plan.name}</h2>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "0.25rem", marginBottom: "1rem" }}>
+                  <span style={{ fontSize: "2rem", fontWeight: 700, color: "var(--ink-strong)" }}>{plan.price}</span>
+                  <span style={{ color: "var(--ink-soft)", fontSize: "0.9rem" }}>{plan.period}</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem" }}>
+                  {plan.features.map((f) => (
+                    <li key={f} style={{ padding: "0.35rem 0", fontSize: "0.9rem", color: "var(--ink)", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{ color: "var(--good)", fontWeight: 700 }}>✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                {isCurrent ? (
+                  <span
+                    className="btn btn-ghost"
+                    style={{ display: "block", textAlign: "center", opacity: 0.6, cursor: "default" }}
+                  >
+                    Current plan
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => handleSubscribe(plan.key)}
+                    className={`btn ${plan.highlight ? "btn-primary" : "btn-ghost"}`}
+                    style={{ display: "block", textAlign: "center", width: "100%" }}
+                    disabled={busy !== null}
+                  >
+                    {busy === plan.key ? "Processing…" : plan.cta}
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <div style={{ textAlign: "center", marginTop: "3rem", color: "var(--ink-soft)", fontSize: "0.88rem" }}>

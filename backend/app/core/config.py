@@ -43,6 +43,12 @@ class Settings(BaseSettings):
     upload_dir: str = "./data/uploads"
     max_upload_mb: int = 25
 
+    razorpay_key_id: str = ""
+    razorpay_key_secret: str = ""
+    razorpay_plan_id_pro: str = ""
+    razorpay_plan_id_enterprise: str = ""
+    razorpay_webhook_secret: str = ""
+
     # Plan limits: reviews per month, generations per month
     free_reviews_per_month: int = 3
     free_generations_per_month: int = 2

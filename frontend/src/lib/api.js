@@ -223,4 +223,11 @@ export const api = {
 
   // Profile
   updateProfile: (payload) => request("/auth/profile", { method: "PUT", body: payload }),
+
+  // Payments
+  listPlans: ({ signal } = {}) => request("/payments/plans", { signal }),
+  createSubscription: (plan) => request("/payments/subscribe", { method: "POST", body: { plan } }),
+  verifyPayment: (payload) => request("/payments/verify", { method: "POST", body: payload }),
+  getSubscription: ({ signal } = {}) => request("/payments/subscription", { signal }),
+  cancelSubscription: () => request("/payments/cancel", { method: "POST" }),
 };

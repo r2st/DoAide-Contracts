@@ -27,7 +27,7 @@ def get_usage_count(db: Session, user_id: int, action: str) -> int:
 
 
 def check_usage_limit(db: Session, user: User, action: str) -> tuple[bool, int, int]:
-    if user.plan != UserPlan.FREE:
+    if user.plan in (UserPlan.PRO, UserPlan.ENTERPRISE):
         return True, 0, 0
 
     count = get_usage_count(db, user.id, action)

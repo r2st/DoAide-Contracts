@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle";
 import { useAuth } from "../hooks/useAuth";
 import { api, isAbortError } from "../lib/api";
@@ -7,8 +8,8 @@ import ErrorBanner from "../components/ErrorBanner";
 
 const PLAN_LIMITS = {
   free: { reviews: 3, generations: 2 },
-  pro: { reviews: -1, generations: 20 },
-  business: { reviews: -1, generations: -1 },
+  pro: { reviews: -1, generations: -1 },
+  enterprise: { reviews: -1, generations: -1 },
 };
 
 export default function SettingsPage() {
@@ -19,12 +20,17 @@ export default function SettingsPage() {
   const [success, setSuccess] = useState("");
   const [busy, setBusy] = useState(false);
   const [usage, setUsage] = useState(null);
+  const [subscription, setSubscription] = useState(null);
+  const [cancelling, setCancelling] = useState(false);
 
   useEffect(() => {
     const ctrl = new AbortController();
     api.usage({ signal: ctrl.signal })
       .then(setUsage)
       .catch((e) => { if (!isAbortError(e)) setError(e.message); });
+    api.getSubscription({ signal: ctrl.signal })
+      .then(setSubscription)
+      .catch(() => {});
     return () => ctrl.abort();
   }, []);
 
@@ -39,6 +45,22 @@ export default function SettingsPage() {
       setError(err.message);
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function handleCancel() {
+    if (!confirm("Are you sure you want to cancel your subscription? You will be downgraded to the Free plan.")) return;
+    setCancelling(true);
+    setError("");
+    try {
+      await api.cancelSubscription();
+      setSuccess("Subscription cancelled. You are now on the Free plan.");
+      setSubscription(null);
+      window.location.reload();
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setCancelling(false);
     }
   }
 
@@ -85,11 +107,24 @@ export default function SettingsPage() {
           <div style={{ marginBottom: "1rem" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 600, textTransform: "capitalize" }}>{plan} plan</span>
-              {plan === "free" && (
-                <a href="/pricing" className="btn btn-primary" style={{ fontSize: "0.85rem", padding: "0.3rem 0.7rem" }}>
-                  Upgrade
-                </a>
-              )}
+              <div style={{ display: "flex", gap: "0.5rem" }}>
+                {plan === "free" && (
+                  <Link to="/pricing" className="btn btn-primary" style={{ fontSize: "0.85rem", padding: "0.3rem 0.7rem" }}>
+                    Upgrade
+                  </Link>
+                )}
+                {plan !== "free" && subscription?.status === "active" && (
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    className="btn btn-ghost"
+                    style={{ fontSize: "0.85rem", padding: "0.3rem 0.7rem", color: "var(--danger)" }}
+                    disabled={cancelling}
+                  >
+                    {cancelling ? "Cancelling…" : "Cancel subscription"}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
           {usage && (

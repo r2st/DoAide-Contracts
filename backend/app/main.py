@@ -11,7 +11,7 @@ import app.models  # noqa: F401
 from app.core.config import settings
 from app.core.database import check_database
 from app.core.errors import register_exception_handlers
-from app.routers import auth, contracts, health, templates
+from app.routers import auth, contracts, health, payments, templates
 
 logger = logging.getLogger(__name__)
 
@@ -56,6 +56,7 @@ def create_app() -> FastAPI:
     application.include_router(auth.router, prefix=prefix)
     application.include_router(contracts.router, prefix=prefix)
     application.include_router(templates.router, prefix=prefix)
+    application.include_router(payments.router, prefix=prefix)
 
     @application.get("/", include_in_schema=False)
     def root() -> dict:

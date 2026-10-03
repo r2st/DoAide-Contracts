@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 const TOOLS = [
+  { path: "/tools", label: "All Tools" },
   { path: "/templates", label: "Templates" },
   { path: "/generator", label: "Generator" },
   { path: "/checker", label: "Clause Checker" },

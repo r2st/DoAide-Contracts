@@ -8,6 +8,7 @@ import NdaTemplateGuide from "./pages/blog/NdaTemplateGuide";
 import EmploymentContractChecklist from "./pages/blog/EmploymentContractChecklist";
 import FreelancerAgreementGuide from "./pages/blog/FreelancerAgreementGuide";
 import CheckerPage from "./pages/CheckerPage";
+import ClauseLibraryPage from "./pages/ClauseLibraryPage";
 import ContractViewPage from "./pages/ContractViewPage";
 import DashboardPage from "./pages/DashboardPage";
 import EmbedPage from "./pages/EmbedPage";
@@ -17,13 +18,16 @@ import FreeTemplatesPage from "./pages/FreeTemplatesPage";
 import GeneratorPage from "./pages/GeneratorPage";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import NdaGeneratorPage from "./pages/NdaGeneratorPage";
 import MyTemplatesPage from "./pages/MyTemplatesPage";
 import PricingPage from "./pages/PricingPage";
+import ReadabilityScorerPage from "./pages/ReadabilityScorerPage";
 import RegisterPage from "./pages/RegisterPage";
 import ReviewPage from "./pages/ReviewPage";
 import SettingsPage from "./pages/SettingsPage";
 import TemplateDetailPage from "./pages/TemplateDetailPage";
 import TemplateLibraryPage from "./pages/TemplateLibraryPage";
+import ToolsIndexPage from "./pages/ToolsIndexPage";
 import UploadPage from "./pages/UploadPage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 
@@ -78,6 +82,10 @@ export default function App() {
       <Route path="/template/:slug" element={<TemplateDetailPage />} />
       <Route path="/generator" element={<FreeGeneratorPage />} />
       <Route path="/checker" element={<CheckerPage />} />
+      <Route path="/tools" element={<ToolsIndexPage />} />
+      <Route path="/tools/nda-generator" element={<NdaGeneratorPage />} />
+      <Route path="/tools/clause-library" element={<ClauseLibraryPage />} />
+      <Route path="/tools/readability-scorer" element={<ReadabilityScorerPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 
       {/* Blog / SEO pages */}

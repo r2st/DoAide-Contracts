@@ -21,6 +21,12 @@ keys/
 data/
 backend/data/
 
+# Node / Frontend
+node_modules/
+dist/
+frontend/dist/
+frontend/node_modules/
+
 # Editors / OS
 .DS_Store
 .idea/

@@ -124,10 +124,10 @@ a { color: var(--brand); }
   font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
 }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-.btn-primary { background: var(--brand); color: var(--brand-text); }
+.btn-primary { background: var(--brand); color: var(--brand-text) !important; }
 .btn-primary:hover:not(:disabled) { background: var(--brand-dark); }
-.btn-ghost { background: var(--surface); border-color: var(--line); color: var(--ink); }
-.btn-danger { background: var(--bad-bg); color: var(--bad); border-color: rgba(248, 113, 113, 0.3); }
+.btn-ghost { background: var(--surface); border-color: var(--line); color: var(--ink) !important; }
+.btn-danger { background: var(--bad-bg); color: var(--bad) !important; border-color: rgba(248, 113, 113, 0.3); }
 
 /* ---- Forms ---- */
 input, select, textarea {
@@ -449,7 +449,7 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
 .tools-nav-link.active { background: rgba(240, 180, 41, 0.12); color: var(--brand); font-weight: 600; }
 .tools-nav-cta {
   padding: 0.4rem 0.75rem; border-radius: var(--radius); font-size: 0.85rem;
-  font-weight: 600; background: var(--brand); color: var(--brand-text); text-decoration: none;
+  font-weight: 600; background: var(--brand); color: var(--brand-text) !important; text-decoration: none;
 }
 
 /* ---- Tool page layout ---- */

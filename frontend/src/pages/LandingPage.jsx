@@ -364,6 +364,7 @@ export default function LandingPage() {
             <Link to="/blog/free-nda-template-india-2026">NDA Guide</Link>
             <Link to="/blog/employment-contract-checklist">Employment Checklist</Link>
             <Link to="/blog/freelancer-agreement-guide">Freelancer Guide</Link>
+            <Link to="/blog/service-level-agreement-guide">SLA Guide</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Product</h4>

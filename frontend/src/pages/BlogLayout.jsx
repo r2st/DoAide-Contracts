@@ -16,6 +16,11 @@ const ARTICLES = [
     title: "Freelancer Agreement Guide: Protect Your Business",
     description: "How to create a solid freelancer agreement under Indian law. Covers IP ownership, payment terms, and contractor vs employee classification.",
   },
+  {
+    slug: "service-level-agreement-guide",
+    title: "Service Level Agreement (SLA) Guide for IT Services",
+    description: "How to draft an enforceable SLA for IT and managed services in India. Covers uptime guarantees, penalty structures, and escalation procedures.",
+  },
 ];
 
 export { ARTICLES };

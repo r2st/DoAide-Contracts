@@ -7,6 +7,7 @@ import BlogLayout, { BlogIndex } from "./pages/BlogLayout";
 import NdaTemplateGuide from "./pages/blog/NdaTemplateGuide";
 import EmploymentContractChecklist from "./pages/blog/EmploymentContractChecklist";
 import FreelancerAgreementGuide from "./pages/blog/FreelancerAgreementGuide";
+import ServiceLevelAgreementGuide from "./pages/blog/ServiceLevelAgreementGuide";
 import CheckerPage from "./pages/CheckerPage";
 import ClauseLibraryPage from "./pages/ClauseLibraryPage";
 import ContractViewPage from "./pages/ContractViewPage";
@@ -94,6 +95,7 @@ export default function App() {
         <Route path="free-nda-template-india-2026" element={<NdaTemplateGuide />} />
         <Route path="employment-contract-checklist" element={<EmploymentContractChecklist />} />
         <Route path="freelancer-agreement-guide" element={<FreelancerAgreementGuide />} />
+        <Route path="service-level-agreement-guide" element={<ServiceLevelAgreementGuide />} />
       </Route>
 
       {/* Authenticated routes */}

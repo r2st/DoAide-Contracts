@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ToolsNav from "../components/ToolsNav";
 import ShareButtons from "../components/ShareButtons";
@@ -25,33 +26,97 @@ const ICONS = {
   ),
 };
 
+const CATEGORIES = [
+  { key: "all", label: "All Templates" },
+  { key: "nda", label: "NDA" },
+  { key: "employment", label: "Employment" },
+  { key: "sow", label: "Freelancer / SOW" },
+  { key: "rental", label: "Rental" },
+  { key: "msa", label: "Business / MSA" },
+];
+
+function TemplatePreview({ body }) {
+  const lines = body.split("\n").slice(0, 8).join("\n");
+  return (
+    <pre className="template-preview-snippet">{lines}</pre>
+  );
+}
+
 export default function FreeTemplatesPage() {
   usePageTitle("Free Contract Templates India 2026 — NDA, Employment, Rental, Partnership");
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [expandedSlug, setExpandedSlug] = useState(null);
+
+  const filtered = activeCategory === "all"
+    ? TEMPLATES
+    : TEMPLATES.filter((t) => t.category === activeCategory);
 
   return (
     <div className="tool-page">
       <ToolsNav />
       <main className="tool-main">
         <div className="tool-container">
-          <h1 className="tool-title">Free Contract Templates</h1>
+          <h1 className="tool-title">Template Gallery</h1>
           <p className="tool-subtitle">
             Browse legally-sound contract templates for Indian businesses. Preview the full text,
             customize with your details, and download — no sign-up required.
           </p>
 
+          <div className="template-gallery-filters" role="tablist" aria-label="Filter by category">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.key}
+                role="tab"
+                aria-selected={activeCategory === cat.key}
+                className={`template-filter-btn ${activeCategory === cat.key ? "active" : ""}`}
+                onClick={() => setActiveCategory(cat.key)}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          <p className="template-gallery-count">{filtered.length} template{filtered.length !== 1 ? "s" : ""}</p>
+
           <div className="template-grid">
-            {TEMPLATES.map((t) => (
-              <Link key={t.slug} to={`/template/${t.slug}`} className="template-card">
-                <div className="template-card-icon">
-                  {ICONS[t.icon] || ICONS.handshake}
-                </div>
-                <h2>{t.name}</h2>
-                <p>{t.description}</p>
-                <div className="template-card-footer">
+            {filtered.map((t) => (
+              <div key={t.slug} className="template-card">
+                <Link to={`/template/${t.slug}`} className="template-card-link">
+                  <div className="template-card-icon">
+                    {ICONS[t.icon] || ICONS.handshake}
+                  </div>
+                  <h2>{t.name}</h2>
+                  <p>{t.description}</p>
+                </Link>
+
+                <TemplatePreview body={t.body} />
+
+                <div className="template-card-meta">
                   <span className="chip chip-neutral">{t.category}</span>
-                  <span className="template-card-cta">View template →</span>
+                  <span className="template-field-count">{t.fields.length} fields</span>
                 </div>
-              </Link>
+
+                {expandedSlug === t.slug && (
+                  <pre className="template-expanded-preview">
+                    {t.body.split("\n").slice(0, 20).join("\n")}
+                    {"\n..."}
+                  </pre>
+                )}
+
+                <div className="template-card-actions">
+                  <button
+                    type="button"
+                    className="btn btn-ghost template-preview-toggle"
+                    onClick={() => setExpandedSlug(expandedSlug === t.slug ? null : t.slug)}
+                    aria-expanded={expandedSlug === t.slug}
+                  >
+                    {expandedSlug === t.slug ? "Hide preview" : "Quick preview"}
+                  </button>
+                  <Link to={`/template/${t.slug}`} className="template-card-cta">
+                    View template →
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
 

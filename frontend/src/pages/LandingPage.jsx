@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 import ShareButtons from "../components/ShareButtons";
@@ -143,6 +143,69 @@ const INSTANT_TOOLS = [
   },
 ];
 
+const QUICK_START = [
+  {
+    slug: "nda",
+    name: "Non-Disclosure Agreement",
+    tagline: "Protect confidential information — India's most-used business contract",
+    icon: "lock",
+  },
+  {
+    slug: "service-agreement",
+    name: "Service Agreement",
+    tagline: "Define scope, SLAs, and payment terms for B2B engagements",
+    icon: "handshake",
+  },
+  {
+    slug: "employment",
+    name: "Employment Contract",
+    tagline: "Hire confidently with Indian labour law compliance built in",
+    icon: "briefcase",
+  },
+];
+
+function AnimatedCounter({ target, suffix = "+" }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.3 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const duration = 1500;
+    const steps = 40;
+    const increment = target / steps;
+    let current = 0;
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(interval);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(interval);
+  }, [started, target]);
+
+  const formatted = count.toLocaleString("en-IN");
+  return (
+    <span ref={ref} className="landing-animated-counter">
+      <strong>{formatted}{suffix}</strong>
+    </span>
+  );
+}
+
 const TESTIMONIALS = [
   { name: "Vikram R.", role: "Startup Founder, Bangalore", quote: "Generated an NDA in 2 minutes. Sent it to my lawyer — she said it covered all the bases. Saved us ₹5,000 in legal fees." },
   { name: "Anita P.", role: "HR Manager, Mumbai", quote: "We use DoAide for all our employment contracts now. The clause checker caught a missing IP assignment clause we'd been overlooking." },
@@ -243,7 +306,8 @@ export default function LandingPage() {
             <Link to="/checker" className="btn btn-ghost btn-lg">Check a Contract</Link>
           </div>
           <p className="landing-instant-stat">
-            Used by <strong>8,500+</strong> businesses across India
+            Used by <AnimatedCounter target={8500} /> businesses across India
+            <span className="landing-stat-sub">and growing</span>
           </p>
           <div className="landing-tool-cards">
             {INSTANT_TOOLS.map((t) => (
@@ -252,6 +316,23 @@ export default function LandingPage() {
                 <strong>{t.title}</strong>
                 <span>{t.desc}</span>
               </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="landing-section" aria-labelledby="quickstart-heading">
+          <h2 id="quickstart-heading" className="landing-section-title">Quick Start — Most Popular Contracts</h2>
+          <div className="landing-quickstart-grid">
+            {QUICK_START.map((qs) => (
+              <div key={qs.slug} className="landing-quickstart-card">
+                <div className="landing-feature-icon">{TEMPLATE_ICONS[qs.icon]}</div>
+                <h3>{qs.name}</h3>
+                <p>{qs.tagline}</p>
+                <div className="landing-qs-actions">
+                  <Link to={`/generator?template=${qs.slug}`} className="btn btn-primary">Generate Now →</Link>
+                  <Link to={`/template/${qs.slug}`} className="btn btn-ghost">Preview →</Link>
+                </div>
+              </div>
             ))}
           </div>
         </section>

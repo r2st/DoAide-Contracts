@@ -60,6 +60,6 @@ describe("BlogIndex", () => {
   });
 
   it("has 3 articles", () => {
-    expect(ARTICLES).toHaveLength(3);
+    expect(ARTICLES).toHaveLength(4);
   });
 });

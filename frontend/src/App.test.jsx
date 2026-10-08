@@ -44,7 +44,7 @@ describe("App routing", () => {
 
   it("renders free templates page at /templates", () => {
     renderAt("/templates");
-    expect(screen.getByText("Free Contract Templates")).toBeInTheDocument();
+    expect(screen.getByText("Template Gallery")).toBeInTheDocument();
   });
 
   it("renders template detail page at /template/nda", () => {

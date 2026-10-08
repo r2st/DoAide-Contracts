@@ -39,7 +39,8 @@ describe("LandingPage", () => {
 
   it("shows usage counter", () => {
     renderLanding();
-    expect(screen.getByText(/8,500\+/)).toBeInTheDocument();
+    expect(screen.getByText(/businesses across India/)).toBeInTheDocument();
+    expect(screen.getByText("and growing")).toBeInTheDocument();
   });
 
   it("shows instant tool cards", () => {
@@ -47,6 +48,20 @@ describe("LandingPage", () => {
     expect(screen.getByText("Browse Templates")).toBeInTheDocument();
     expect(screen.getByText("Generate Contract")).toBeInTheDocument();
     expect(screen.getByText("Check Clauses")).toBeInTheDocument();
+  });
+
+  it("shows Quick Start section", () => {
+    renderLanding();
+    expect(screen.getByText("Quick Start — Most Popular Contracts")).toBeInTheDocument();
+    expect(screen.getAllByText(/Non-Disclosure Agreement/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Service Agreement/).length).toBeGreaterThan(0);
+    expect(screen.getByText("Employment Contract")).toBeInTheDocument();
+  });
+
+  it("shows Quick Start generate buttons", () => {
+    renderLanding();
+    const generateBtns = screen.getAllByText("Generate Now →");
+    expect(generateBtns.length).toBe(3);
   });
 
   it("shows template gallery section", () => {

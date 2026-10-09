@@ -430,6 +430,8 @@ export default function LandingPage() {
             <Link to="/templates">Contract Templates</Link>
             <Link to="/generator">Contract Generator</Link>
             <Link to="/checker">Clause Checker</Link>
+            <Link to="/tools/stamp-duty-calculator">Stamp Duty Calculator</Link>
+            <Link to="/tools/clause-library">Clause Library</Link>
             <Link to="/embed">Embed Widget</Link>
           </div>
           <div className="landing-footer-col">

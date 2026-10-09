@@ -24,6 +24,7 @@ import MyTemplatesPage from "./pages/MyTemplatesPage";
 import PricingPage from "./pages/PricingPage";
 import ReadabilityScorerPage from "./pages/ReadabilityScorerPage";
 import RegisterPage from "./pages/RegisterPage";
+import StampDutyCalculatorPage from "./pages/StampDutyCalculatorPage";
 import ReviewPage from "./pages/ReviewPage";
 import SettingsPage from "./pages/SettingsPage";
 import TemplateDetailPage from "./pages/TemplateDetailPage";
@@ -87,6 +88,7 @@ export default function App() {
       <Route path="/tools/nda-generator" element={<NdaGeneratorPage />} />
       <Route path="/tools/clause-library" element={<ClauseLibraryPage />} />
       <Route path="/tools/readability-scorer" element={<ReadabilityScorerPage />} />
+      <Route path="/tools/stamp-duty-calculator" element={<StampDutyCalculatorPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 
       {/* Blog / SEO pages */}

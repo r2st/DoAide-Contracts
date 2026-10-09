@@ -3,8 +3,9 @@ import ToolsNav from "../components/ToolsNav";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 const TOOLS = [
+  { path: "/tools/stamp-duty-calculator", title: "Stamp Duty Calculator", description: "Calculate stamp duty and registration charges for any Indian state and document type.", icon: "🏛️" },
+  { path: "/tools/clause-library", title: "Contract Clause Library", description: "Browse 20+ contract clauses with explanations, usage guidance, and pitfalls — copy any clause.", icon: "📚" },
   { path: "/tools/nda-generator", title: "NDA Generator", description: "Generate a ready-to-use Non-Disclosure Agreement with customizable terms.", icon: "🔒" },
-  { path: "/tools/clause-library", title: "Contract Clause Library", description: "Browse and copy common contract clauses — indemnification, termination, IP, and more.", icon: "📚" },
   { path: "/tools/readability-scorer", title: "Contract Readability Scorer", description: "Paste any contract text and get a readability score with plain-language suggestions.", icon: "📊" },
   { path: "/checker", title: "Clause Risk Checker", description: "Check your contract for risky clauses and missing essentials.", icon: "⚠️" },
   { path: "/generator", title: "Contract Generator", description: "Generate contracts from templates — NDA, employment, freelancer, and more.", icon: "📄" },

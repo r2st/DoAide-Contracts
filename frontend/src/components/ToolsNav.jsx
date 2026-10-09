@@ -5,6 +5,8 @@ const TOOLS = [
   { path: "/templates", label: "Templates" },
   { path: "/generator", label: "Generator" },
   { path: "/checker", label: "Clause Checker" },
+  { path: "/tools/stamp-duty-calculator", label: "Stamp Duty" },
+  { path: "/tools/clause-library", label: "Clauses" },
 ];
 
 export default function ToolsNav() {

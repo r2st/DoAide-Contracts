@@ -455,6 +455,312 @@ ________________________          ________________________
 {{service_provider}}              {{client_name}}
 (Authorized Signatory)            (Authorized Signatory)`,
   },
+  {
+    slug: "consulting-agreement",
+    name: "Consulting Agreement",
+    category: "sow",
+    description: "Professional consulting engagement agreement for Indian businesses. Covers deliverables, fees, IP rights, confidentiality, and termination provisions.",
+    icon: "clipboard",
+    fields: [
+      { key: "company_name", label: "Company Name", type: "text", required: true, placeholder: "e.g. InfoTech Solutions Pvt Ltd" },
+      { key: "consultant_name", label: "Consultant Name / Firm", type: "text", required: true, placeholder: "e.g. Rajiv Consulting LLP" },
+      { key: "engagement_scope", label: "Scope of Engagement", type: "textarea", required: true, placeholder: "Describe the consulting services, deliverables, and objectives" },
+      { key: "start_date", label: "Start Date", type: "date", required: true },
+      { key: "end_date", label: "End Date", type: "date", required: true },
+      { key: "consulting_fee", label: "Consulting Fee (INR)", type: "text", required: true, placeholder: "e.g. 3,00,000" },
+      { key: "payment_schedule", label: "Payment Schedule", type: "select", options: ["Monthly retainer", "Milestone-based", "On completion", "50% advance, 50% on completion"], required: true },
+      { key: "governing_state", label: "Governing State", type: "text", required: true, placeholder: "e.g. Maharashtra" },
+    ],
+    body: `CONSULTING AGREEMENT
+
+This Consulting Agreement ("Agreement") is entered into as of {{start_date}},
+
+BETWEEN:
+
+{{company_name}}, a company incorporated under the laws of India (hereinafter referred to as the "Company"),
+
+AND
+
+{{consultant_name}} (hereinafter referred to as the "Consultant").
+
+1. ENGAGEMENT
+The Company hereby engages the Consultant to provide the following consulting services:
+{{engagement_scope}}
+
+2. TERM
+(a) This Agreement shall commence on {{start_date}} and terminate on {{end_date}}, unless terminated earlier or extended by mutual written agreement.
+(b) Either Party may request an extension by providing written notice at least 30 days before the expiry date.
+
+3. COMPENSATION
+(a) The Company shall pay the Consultant a fee of ₹{{consulting_fee}} for the services rendered under this Agreement.
+(b) Payment schedule: {{payment_schedule}}.
+(c) The Consultant shall submit invoices with GST details where applicable. TDS shall be deducted at applicable rates under the Income Tax Act, 1961.
+(d) Reimbursable expenses (travel, accommodation) shall be pre-approved in writing and supported by receipts.
+
+4. INDEPENDENT CONTRACTOR
+(a) The Consultant is an independent contractor and not an employee, agent, or partner of the Company.
+(b) The Consultant is responsible for their own tax filings, insurance, and statutory compliance.
+(c) No employment benefits including PF, ESI, gratuity, or leave entitlements shall apply.
+(d) The Consultant shall not have authority to bind the Company in any manner.
+
+5. DELIVERABLES AND REPORTING
+(a) The Consultant shall deliver the agreed-upon services and deliverables within the timelines specified.
+(b) The Consultant shall provide periodic progress reports as mutually agreed.
+(c) The Company shall provide reasonable access to information and personnel necessary for the engagement.
+
+6. CONFIDENTIALITY
+(a) The Consultant shall maintain strict confidentiality of all proprietary information, trade secrets, business strategies, and client data of the Company.
+(b) This obligation shall survive termination of this Agreement for a period of 3 years.
+(c) Confidential Information excludes information that is publicly available or independently developed.
+
+7. INTELLECTUAL PROPERTY
+(a) All work product, reports, analyses, and deliverables created under this Agreement shall be the exclusive property of the Company upon full payment.
+(b) The Consultant assigns all rights, title, and interest in such work product to the Company.
+(c) The Consultant retains rights to pre-existing tools, methodologies, and frameworks, with a perpetual licence granted to the Company for use of such materials in the deliverables.
+
+8. NON-SOLICITATION
+During the term and for 12 months after termination, the Consultant shall not directly solicit or hire employees of the Company who were involved in this engagement.
+
+9. CONFLICT OF INTEREST
+The Consultant shall disclose any existing or potential conflicts of interest. The Consultant shall not engage with direct competitors of the Company during the term without prior written consent.
+
+10. LIABILITY AND INDEMNIFICATION
+(a) The Consultant's total liability under this Agreement shall not exceed the total fees paid or payable.
+(b) Neither Party shall be liable for indirect, consequential, or punitive damages.
+(c) Each Party shall indemnify the other against claims arising from breach of this Agreement or negligence.
+
+11. TERMINATION
+(a) Either Party may terminate with 30 days' written notice.
+(b) The Company may terminate immediately for cause, including material breach, fraud, or misconduct.
+(c) Upon termination, the Consultant shall deliver all work completed to date and return all Company materials.
+(d) The Company shall pay for work completed up to the termination date.
+
+12. FORCE MAJEURE
+Neither Party shall be liable for delays caused by events beyond reasonable control, including natural disasters, government actions, strikes, or pandemic-related restrictions.
+
+13. DISPUTE RESOLUTION
+(a) Disputes shall first be resolved through good-faith negotiation within 30 days.
+(b) Failing negotiation, disputes shall be referred to arbitration under the Arbitration and Conciliation Act, 1996, with the seat of arbitration in {{governing_state}}.
+
+14. GOVERNING LAW
+This Agreement shall be governed by the laws of India and subject to the exclusive jurisdiction of courts in {{governing_state}}.
+
+15. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the Parties. No amendment shall be valid unless in writing and signed by both Parties.
+
+IN WITNESS WHEREOF:
+
+________________________          ________________________
+{{company_name}}                  {{consultant_name}}
+(Authorized Signatory)            (Consultant Signature)`,
+  },
+  {
+    slug: "non-compete",
+    name: "Non-Compete Agreement",
+    category: "nda",
+    description: "Non-compete and non-solicitation agreement for employees, partners, or business associates. Includes Indian enforceability considerations under Section 27.",
+    icon: "shield",
+    fields: [
+      { key: "company_name", label: "Company Name", type: "text", required: true, placeholder: "e.g. Pinnacle Tech Pvt Ltd" },
+      { key: "individual_name", label: "Individual Name", type: "text", required: true, placeholder: "e.g. Arjun Mehta" },
+      { key: "individual_role", label: "Role / Designation", type: "text", required: true, placeholder: "e.g. VP of Engineering" },
+      { key: "effective_date", label: "Effective Date", type: "date", required: true },
+      { key: "restricted_period", label: "Restricted Period", type: "select", options: ["6 months", "12 months", "18 months", "24 months"], required: true },
+      { key: "geographic_scope", label: "Geographic Scope", type: "text", required: true, placeholder: "e.g. India or Maharashtra" },
+      { key: "business_description", label: "Company's Business Description", type: "textarea", required: true, placeholder: "Describe the company's core business activities" },
+      { key: "governing_state", label: "Governing State", type: "text", required: true, placeholder: "e.g. Karnataka" },
+    ],
+    body: `NON-COMPETE AND NON-SOLICITATION AGREEMENT
+
+This Non-Compete and Non-Solicitation Agreement ("Agreement") is entered into as of {{effective_date}},
+
+BETWEEN:
+
+{{company_name}}, a company incorporated under the laws of India (hereinafter referred to as the "Company"),
+
+AND
+
+{{individual_name}}, serving as {{individual_role}} (hereinafter referred to as the "Individual").
+
+RECITALS:
+
+WHEREAS, the Individual has access to the Company's confidential information, trade secrets, client relationships, and business strategies;
+
+WHEREAS, the Company's business involves: {{business_description}};
+
+WHEREAS, the Parties agree that reasonable restrictions on competitive activities are necessary to protect the Company's legitimate business interests;
+
+NOW, THEREFORE, the Parties agree as follows:
+
+1. NON-COMPETE RESTRICTION
+(a) During the term of engagement and for a period of {{restricted_period}} after cessation of engagement ("Restricted Period"), the Individual shall not, directly or indirectly:
+    (i) Engage in, establish, or operate any business that competes with the Company's business;
+    (ii) Accept employment or consulting engagement with any direct competitor of the Company;
+    (iii) Acquire ownership interest (exceeding 5%) in any competing business.
+(b) Geographic scope: {{geographic_scope}}.
+(c) This restriction applies only to business activities substantially similar to the Company's core business as described herein.
+
+2. NON-SOLICITATION OF CLIENTS
+During the Restricted Period, the Individual shall not:
+(a) Solicit, contact, or attempt to divert any client, customer, or business partner of the Company with whom the Individual had dealings during the last 24 months of engagement;
+(b) Induce any client to reduce or terminate their business relationship with the Company.
+
+3. NON-SOLICITATION OF EMPLOYEES
+During the Restricted Period, the Individual shall not:
+(a) Recruit, solicit, or induce any employee, contractor, or consultant of the Company to leave the Company;
+(b) Hire or engage any person who was employed by the Company within the preceding 12 months.
+
+4. CONFIDENTIALITY
+(a) The Individual shall not use or disclose any confidential information, trade secrets, or proprietary data of the Company, whether during or after the engagement.
+(b) Confidential information includes, but is not limited to: client lists, pricing strategies, product roadmaps, financial data, and business plans.
+
+5. CONSIDERATION
+The Individual acknowledges that this Agreement is supported by adequate consideration, including continued engagement, access to confidential information, and any additional compensation or benefits as specified separately.
+
+6. INDIAN LAW ENFORCEABILITY
+(a) The Parties acknowledge that Section 27 of the Indian Contract Act, 1872, renders agreements in restraint of trade void, with exceptions for goodwill sales.
+(b) This Agreement is drafted to be reasonable in scope, duration, and geographic extent, and is intended to protect legitimate business interests.
+(c) The restrictions herein are intended to operate during the term of engagement; post-termination restrictions are included as contractual obligations and shall be interpreted in accordance with prevailing judicial interpretation in India.
+(d) If any provision is found unenforceable, the remaining provisions shall continue in full force, and the unenforceable provision shall be modified to the minimum extent necessary.
+
+7. REMEDIES
+(a) The Individual acknowledges that breach of this Agreement may cause irreparable harm to the Company.
+(b) In the event of breach, the Company shall be entitled to seek injunctive relief and damages.
+(c) The Company may also recover any compensation paid during the notice period.
+
+8. TERM AND SURVIVAL
+(a) This Agreement is effective from {{effective_date}} and the restrictions shall survive for the Restricted Period after cessation of engagement.
+(b) Confidentiality obligations shall survive indefinitely.
+
+9. DISPUTE RESOLUTION
+Any dispute arising from this Agreement shall be resolved through arbitration under the Arbitration and Conciliation Act, 1996, with the seat of arbitration in {{governing_state}}.
+
+10. GOVERNING LAW
+This Agreement shall be governed by the laws of India and subject to the jurisdiction of courts in {{governing_state}}.
+
+IMPORTANT NOTE: The enforceability of non-compete clauses in India is subject to judicial interpretation of Section 27 of the Indian Contract Act, 1872. Parties are advised to seek independent legal counsel.
+
+IN WITNESS WHEREOF:
+
+________________________          ________________________
+{{company_name}}                  {{individual_name}}
+(Authorized Signatory)            (Individual Signature)
+
+WITNESSES:
+1. ________________________
+2. ________________________`,
+  },
+  {
+    slug: "vendor-agreement",
+    name: "Vendor / Supplier Agreement",
+    category: "msa",
+    description: "Vendor and supplier agreement for procurement of goods or services. Covers pricing, delivery, quality standards, warranties, and payment terms for Indian businesses.",
+    icon: "truck",
+    fields: [
+      { key: "buyer_name", label: "Buyer / Company Name", type: "text", required: true, placeholder: "e.g. Bharat Manufacturing Ltd" },
+      { key: "vendor_name", label: "Vendor / Supplier Name", type: "text", required: true, placeholder: "e.g. Quality Parts Pvt Ltd" },
+      { key: "goods_description", label: "Goods / Services Description", type: "textarea", required: true, placeholder: "Describe the goods or services to be supplied" },
+      { key: "contract_value", label: "Estimated Annual Value (INR)", type: "text", required: true, placeholder: "e.g. 10,00,000" },
+      { key: "payment_terms", label: "Payment Terms", type: "select", options: ["Net 30 days", "Net 45 days", "Net 60 days", "Advance payment", "50% advance, 50% on delivery"], required: true },
+      { key: "delivery_location", label: "Delivery Location", type: "text", required: true, placeholder: "e.g. Pune, Maharashtra" },
+      { key: "start_date", label: "Agreement Start Date", type: "date", required: true },
+      { key: "governing_state", label: "Governing State", type: "text", required: true, placeholder: "e.g. Maharashtra" },
+    ],
+    body: `VENDOR / SUPPLIER AGREEMENT
+
+This Vendor Agreement ("Agreement") is entered into as of {{start_date}},
+
+BETWEEN:
+
+{{buyer_name}}, a company incorporated under the laws of India (hereinafter referred to as the "Buyer"),
+
+AND
+
+{{vendor_name}} (hereinafter referred to as the "Vendor").
+
+1. SCOPE OF SUPPLY
+The Vendor agrees to supply the following goods/services to the Buyer:
+{{goods_description}}
+
+The specific quantities, specifications, and delivery schedules shall be as per individual Purchase Orders issued under this Agreement.
+
+2. TERM
+(a) This Agreement shall commence on {{start_date}} and continue for a period of 12 months, unless terminated earlier.
+(b) The Agreement may be renewed for additional 12-month periods by mutual written agreement at least 30 days before expiry.
+
+3. PRICING AND PAYMENT
+(a) The estimated annual value of supplies under this Agreement is ₹{{contract_value}}.
+(b) Prices shall be as specified in individual Purchase Orders and shall remain firm for the duration of each order.
+(c) Payment terms: {{payment_terms}} from the date of invoice and satisfactory delivery.
+(d) All prices are exclusive of GST, which shall be charged at applicable rates. The Vendor shall provide valid GST invoices.
+(e) TDS shall be deducted at applicable rates under the Income Tax Act, 1961.
+(f) Late payments shall attract interest at 1.5% per month.
+
+4. PURCHASE ORDERS
+(a) The Buyer shall issue Purchase Orders specifying quantities, delivery dates, and any special requirements.
+(b) The Vendor shall acknowledge receipt of each Purchase Order within 2 business days.
+(c) A Purchase Order is deemed accepted unless the Vendor raises objections within 3 business days.
+
+5. DELIVERY
+(a) Delivery location: {{delivery_location}}.
+(b) The Vendor shall deliver goods as per the delivery schedule in each Purchase Order.
+(c) Delivery shall be accompanied by a delivery challan, quality certificates, and test reports where applicable.
+(d) Risk and title in the goods shall pass to the Buyer upon delivery and acceptance at the delivery location.
+(e) Time is of the essence. Delayed delivery beyond 7 days entitles the Buyer to a penalty of 1% of the order value per week, capped at 10%.
+
+6. QUALITY AND INSPECTION
+(a) All goods shall conform to the specifications, drawings, and quality standards as agreed.
+(b) The Buyer shall have the right to inspect goods at the Vendor's premises and at the delivery location.
+(c) The Buyer may reject non-conforming goods within 15 days of delivery.
+(d) Rejected goods shall be replaced or refunded within 10 business days at the Vendor's cost.
+
+7. WARRANTIES
+(a) The Vendor warrants that all goods shall be free from defects in material and workmanship for a period of 12 months from delivery.
+(b) The Vendor warrants that all goods comply with applicable Indian standards (BIS/IS) and regulations.
+(c) The Vendor warrants that it has full rights to sell the goods and they do not infringe any third-party IP rights.
+
+8. INDEMNIFICATION
+The Vendor shall indemnify and hold harmless the Buyer against:
+(a) Claims arising from defective goods or services;
+(b) Claims of IP infringement related to the goods supplied;
+(c) Any statutory penalties arising from the Vendor's non-compliance with applicable laws.
+
+9. CONFIDENTIALITY
+Each Party shall maintain the confidentiality of the other's proprietary information, including pricing, specifications, and business data. This obligation survives termination for 3 years.
+
+10. COMPLIANCE
+(a) The Vendor shall comply with all applicable Indian laws, including labour laws, environmental regulations, and anti-corruption laws.
+(b) The Vendor shall maintain all required licences, registrations, and certifications.
+(c) The Vendor shall not employ child labour or engage in any unfair labour practices.
+
+11. INSURANCE
+The Vendor shall maintain adequate insurance covering product liability, transit risks, and statutory liabilities for the duration of this Agreement.
+
+12. TERMINATION
+(a) Either Party may terminate with 60 days' written notice.
+(b) The Buyer may terminate immediately if the Vendor:
+    (i) Fails to deliver on time on 3 or more occasions;
+    (ii) Supplies goods that fail quality standards repeatedly;
+    (iii) Becomes insolvent or enters liquidation;
+    (iv) Commits a material breach not cured within 15 days of notice.
+(c) Upon termination, the Vendor shall complete all pending Purchase Orders unless otherwise directed.
+
+13. FORCE MAJEURE
+Neither Party shall be liable for delays due to events beyond reasonable control, including natural disasters, government restrictions, strikes, or pandemic-related disruptions. The affected Party shall notify the other within 7 days.
+
+14. DISPUTE RESOLUTION
+(a) Disputes shall first be resolved through negotiation between senior representatives within 30 days.
+(b) Failing resolution, disputes shall be referred to arbitration under the Arbitration and Conciliation Act, 1996, in {{governing_state}}.
+
+15. GOVERNING LAW
+This Agreement shall be governed by the laws of India and subject to the exclusive jurisdiction of courts in {{governing_state}}.
+
+IN WITNESS WHEREOF:
+
+________________________          ________________________
+{{buyer_name}}                    {{vendor_name}}
+(Authorized Signatory)            (Authorized Signatory)`,
+  },
 ];
 
 export function getTemplateBySlug(slug) {

@@ -7,6 +7,7 @@ const TOOLS = [
   { path: "/tools/clause-library", title: "Contract Clause Library", description: "Browse 20+ contract clauses with explanations, usage guidance, and pitfalls — copy any clause.", icon: "📚" },
   { path: "/tools/nda-generator", title: "NDA Generator", description: "Generate a ready-to-use Non-Disclosure Agreement with customizable terms.", icon: "🔒" },
   { path: "/tools/readability-scorer", title: "Contract Readability Scorer", description: "Paste any contract text and get a readability score with plain-language suggestions.", icon: "📊" },
+  { path: "/tools/risk-analyzer", title: "Contract Risk Analyzer", description: "AI-powered contract risk analysis — identify risky clauses, missing protections, and Indian law issues. Free, no login.", icon: "🤖" },
   { path: "/checker", title: "Clause Risk Checker", description: "Check your contract for risky clauses and missing essentials.", icon: "⚠️" },
   { path: "/generator", title: "Contract Generator", description: "Generate contracts from templates — NDA, employment, freelancer, and more.", icon: "📄" },
   { path: "/templates", title: "Template Library", description: "Browse free contract templates for common business needs.", icon: "📁" },

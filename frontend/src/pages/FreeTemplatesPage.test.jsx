@@ -50,12 +50,12 @@ describe("FreeTemplatesPage", () => {
   it("shows preview snippets for each template", () => {
     renderPage();
     const snippets = document.querySelectorAll(".template-preview-snippet");
-    expect(snippets.length).toBe(6);
+    expect(snippets.length).toBe(9);
   });
 
   it("shows field count for each template", () => {
     renderPage();
-    expect(screen.getAllByText(/\d+ fields/).length).toBe(6);
+    expect(screen.getAllByText(/\d+ fields/).length).toBe(9);
   });
 
   it("shows category filter buttons", () => {
@@ -69,13 +69,13 @@ describe("FreeTemplatesPage", () => {
     renderPage();
     const user = userEvent.setup();
     await user.click(screen.getByText("NDA"));
-    expect(screen.getByText("1 template")).toBeInTheDocument();
+    expect(screen.getByText("2 templates")).toBeInTheDocument();
   });
 
   it("shows quick preview toggle", async () => {
     renderPage();
     const toggles = screen.getAllByText("Quick preview");
-    expect(toggles.length).toBe(6);
+    expect(toggles.length).toBe(9);
   });
 
   it("expands preview on quick preview click", async () => {
@@ -88,6 +88,6 @@ describe("FreeTemplatesPage", () => {
 
   it("shows template count", () => {
     renderPage();
-    expect(screen.getByText("6 templates")).toBeInTheDocument();
+    expect(screen.getByText("9 templates")).toBeInTheDocument();
   });
 });

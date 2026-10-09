@@ -9,6 +9,8 @@ import NdaTemplateGuide from "./pages/blog/NdaTemplateGuide";
 import EmploymentContractChecklist from "./pages/blog/EmploymentContractChecklist";
 import FreelancerAgreementGuide from "./pages/blog/FreelancerAgreementGuide";
 import ServiceLevelAgreementGuide from "./pages/blog/ServiceLevelAgreementGuide";
+import ConsultingAgreementGuide from "./pages/blog/ConsultingAgreementGuide";
+import StampDutyGuide from "./pages/blog/StampDutyGuide";
 import CheckerPage from "./pages/CheckerPage";
 import ClauseLibraryPage from "./pages/ClauseLibraryPage";
 import ContractViewPage from "./pages/ContractViewPage";
@@ -25,6 +27,7 @@ import MyTemplatesPage from "./pages/MyTemplatesPage";
 import PricingPage from "./pages/PricingPage";
 import ReadabilityScorerPage from "./pages/ReadabilityScorerPage";
 import RegisterPage from "./pages/RegisterPage";
+import RiskAnalyzerPage from "./pages/RiskAnalyzerPage";
 import StampDutyCalculatorPage from "./pages/StampDutyCalculatorPage";
 import ReviewPage from "./pages/ReviewPage";
 import SettingsPage from "./pages/SettingsPage";
@@ -91,6 +94,7 @@ export default function App() {
       <Route path="/tools/nda-generator" element={<NdaGeneratorPage />} />
       <Route path="/tools/clause-library" element={<ClauseLibraryPage />} />
       <Route path="/tools/readability-scorer" element={<ReadabilityScorerPage />} />
+      <Route path="/tools/risk-analyzer" element={<RiskAnalyzerPage />} />
       <Route path="/tools/stamp-duty-calculator" element={<StampDutyCalculatorPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 
@@ -101,6 +105,8 @@ export default function App() {
         <Route path="employment-contract-checklist" element={<EmploymentContractChecklist />} />
         <Route path="freelancer-agreement-guide" element={<FreelancerAgreementGuide />} />
         <Route path="service-level-agreement-guide" element={<ServiceLevelAgreementGuide />} />
+        <Route path="consulting-agreement-guide" element={<ConsultingAgreementGuide />} />
+        <Route path="stamp-duty-guide-india" element={<StampDutyGuide />} />
       </Route>
 
       {/* Authenticated routes */}

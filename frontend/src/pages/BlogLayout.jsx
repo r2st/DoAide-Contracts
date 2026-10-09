@@ -21,6 +21,16 @@ const ARTICLES = [
     title: "Service Level Agreement (SLA) Guide for IT Services",
     description: "How to draft an enforceable SLA for IT and managed services in India. Covers uptime guarantees, penalty structures, and escalation procedures.",
   },
+  {
+    slug: "consulting-agreement-guide",
+    title: "Consulting Agreement Guide for Indian Businesses",
+    description: "Complete guide to drafting consulting agreements in India. Covers scope, IP rights, TDS/GST implications, and key clauses with a free template.",
+  },
+  {
+    slug: "stamp-duty-guide-india",
+    title: "Stamp Duty on Contracts in India — Complete Guide",
+    description: "Everything businesses need to know about stamp duty on contracts. State-wise rates, exemptions, penalties, and practical compliance tips.",
+  },
 ];
 
 export { ARTICLES };

@@ -45,6 +45,15 @@ const TEMPLATE_ICONS = {
   handshake: (
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
   ),
+  clipboard: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" /><line x1="8" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="12" y2="18" /></svg>
+  ),
+  shield: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><line x1="9" y1="12" x2="15" y2="12" /></svg>
+  ),
+  truck: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="1" /><path d="M16 8h4l3 3v5h-7V8z" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg>
+  ),
 };
 
 function Typewriter({ phrases }) {
@@ -80,7 +89,7 @@ function Typewriter({ phrases }) {
 const FEATURES = [
   {
     title: "Free Contract Templates",
-    desc: "NDA, Employment, Freelancer, Rental, Partnership, and Service Agreement templates ready to use.",
+    desc: "NDA, Employment, Freelancer, Rental, Partnership, Service, Consulting, Non-Compete, and Vendor Agreement templates ready to use.",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
     ),
@@ -126,7 +135,7 @@ const INSTANT_TOOLS = [
   {
     to: "/templates",
     title: "Browse Templates",
-    desc: "NDA, Employment, Rental & 3 more — free",
+    desc: "NDA, Employment, Rental & 6 more — free",
     icon: TEMPLATE_ICONS.handshake,
   },
   {
@@ -430,6 +439,7 @@ export default function LandingPage() {
             <Link to="/templates">Contract Templates</Link>
             <Link to="/generator">Contract Generator</Link>
             <Link to="/checker">Clause Checker</Link>
+            <Link to="/tools/risk-analyzer">Risk Analyzer</Link>
             <Link to="/tools/stamp-duty-calculator">Stamp Duty Calculator</Link>
             <Link to="/tools/clause-library">Clause Library</Link>
             <Link to="/embed">Embed Widget</Link>
@@ -440,6 +450,9 @@ export default function LandingPage() {
             <Link to="/template/employment">Employment</Link>
             <Link to="/template/rental">Rental</Link>
             <Link to="/template/freelancer">Freelancer</Link>
+            <Link to="/template/consulting-agreement">Consulting</Link>
+            <Link to="/template/vendor-agreement">Vendor</Link>
+            <Link to="/template/non-compete">Non-Compete</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Resources</h4>
@@ -447,7 +460,8 @@ export default function LandingPage() {
             <Link to="/blog/free-nda-template-india-2026">NDA Guide</Link>
             <Link to="/blog/employment-contract-checklist">Employment Checklist</Link>
             <Link to="/blog/freelancer-agreement-guide">Freelancer Guide</Link>
-            <Link to="/blog/service-level-agreement-guide">SLA Guide</Link>
+            <Link to="/blog/consulting-agreement-guide">Consulting Guide</Link>
+            <Link to="/blog/stamp-duty-guide-india">Stamp Duty Guide</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Product</h4>

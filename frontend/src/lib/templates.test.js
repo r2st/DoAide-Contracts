@@ -2,8 +2,14 @@ import { describe, expect, it } from "vitest";
 import { TEMPLATES, fillTemplate, getTemplateBySlug } from "./templates";
 
 describe("TEMPLATES", () => {
-  it("has at least 6 templates", () => {
-    expect(TEMPLATES.length).toBeGreaterThanOrEqual(6);
+  it("has at least 9 templates", () => {
+    expect(TEMPLATES.length).toBeGreaterThanOrEqual(9);
+  });
+
+  it("includes the new consulting, non-compete, and vendor templates", () => {
+    expect(getTemplateBySlug("consulting-agreement")).not.toBeNull();
+    expect(getTemplateBySlug("non-compete")).not.toBeNull();
+    expect(getTemplateBySlug("vendor-agreement")).not.toBeNull();
   });
 
   it("each template has required fields", () => {

@@ -35,6 +35,9 @@ class Settings(BaseSettings):
     openrouter_api_key: str = ""
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_model: str = "google/gemma-2-9b-it:free"
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-2.0-flash"
+
     openrouter_app_url: str = "https://contracts.doaide.com"
     openrouter_app_title: str = "DoAide Contracts"
     openrouter_timeout_seconds: float = 90.0

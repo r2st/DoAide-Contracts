@@ -4,6 +4,7 @@ import os
 import tempfile
 
 os.environ.setdefault("OPENROUTER_API_KEY", "")
+os.environ.setdefault("GEMINI_API_KEY", "")
 os.environ.setdefault("JWT_SECRET", "test-secret-key-for-tests-only-min32chars")
 os.environ.setdefault("DATABASE_URL", "sqlite+pysqlite:///:memory:")
 os.environ.setdefault("ENVIRONMENT", "development")

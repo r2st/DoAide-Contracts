@@ -10,6 +10,9 @@
   <url><loc>https://contracts.doaide.com/template/rental</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/template/partnership</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/template/service-agreement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/template/consulting-agreement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/template/non-compete</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/template/vendor-agreement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/pricing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/embed</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://contracts.doaide.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -17,7 +20,10 @@
   <url><loc>https://contracts.doaide.com/blog/employment-contract-checklist</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/freelancer-agreement-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/service-level-agreement-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://contracts.doaide.com/blog/consulting-agreement-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://contracts.doaide.com/blog/stamp-duty-guide-india</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/tools</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/tools/risk-analyzer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/tools/stamp-duty-calculator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/tools/clause-library</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/tools/nda-generator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

@@ -31,6 +31,21 @@ const ARTICLES = [
     title: "Stamp Duty on Contracts in India — Complete Guide",
     description: "Everything businesses need to know about stamp duty on contracts. State-wise rates, exemptions, penalties, and practical compliance tips.",
   },
+  {
+    slug: "indian-contract-act-essential-clauses",
+    title: "Indian Contract Act 1872: Essential Clauses Every Business Agreement Needs",
+    description: "Comprehensive guide to the Indian Contract Act 1872 — essential clauses, enforceability requirements, and practical tips for drafting legally sound business agreements.",
+  },
+  {
+    slug: "freelancer-agreement-template-india",
+    title: "Freelancer Agreement Template India: Protect Your Work and Get Paid",
+    description: "Free freelancer agreement template for India. Learn how to protect your IP, ensure timely payments, and draft enforceable contracts as a freelancer under Indian law.",
+  },
+  {
+    slug: "sla-template-indian-it-companies",
+    title: "SLA Template: Complete Guide for Indian IT Companies",
+    description: "Free SLA template and complete guide for Indian IT companies. Covers uptime guarantees, penalty structures, escalation procedures, and Indian legal compliance.",
+  },
 ];
 
 export { ARTICLES };

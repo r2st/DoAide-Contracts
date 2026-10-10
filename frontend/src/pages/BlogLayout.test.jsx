@@ -59,7 +59,7 @@ describe("BlogIndex", () => {
     expect(readMoreLinks).toHaveLength(ARTICLES.length);
   });
 
-  it("has 6 articles", () => {
-    expect(ARTICLES).toHaveLength(6);
+  it("has 9 articles", () => {
+    expect(ARTICLES).toHaveLength(9);
   });
 });

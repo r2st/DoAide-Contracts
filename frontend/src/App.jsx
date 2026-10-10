@@ -11,6 +11,9 @@ import FreelancerAgreementGuide from "./pages/blog/FreelancerAgreementGuide";
 import ServiceLevelAgreementGuide from "./pages/blog/ServiceLevelAgreementGuide";
 import ConsultingAgreementGuide from "./pages/blog/ConsultingAgreementGuide";
 import StampDutyGuide from "./pages/blog/StampDutyGuide";
+import IndianContractActGuide from "./pages/blog/IndianContractActGuide";
+import FreelancerAgreementTemplateGuide from "./pages/blog/FreelancerAgreementTemplateGuide";
+import SlaTemplateGuide from "./pages/blog/SlaTemplateGuide";
 import CheckerPage from "./pages/CheckerPage";
 import ClauseLibraryPage from "./pages/ClauseLibraryPage";
 import ContractViewPage from "./pages/ContractViewPage";
@@ -107,6 +110,9 @@ export default function App() {
         <Route path="service-level-agreement-guide" element={<ServiceLevelAgreementGuide />} />
         <Route path="consulting-agreement-guide" element={<ConsultingAgreementGuide />} />
         <Route path="stamp-duty-guide-india" element={<StampDutyGuide />} />
+        <Route path="indian-contract-act-essential-clauses" element={<IndianContractActGuide />} />
+        <Route path="freelancer-agreement-template-india" element={<FreelancerAgreementTemplateGuide />} />
+        <Route path="sla-template-indian-it-companies" element={<SlaTemplateGuide />} />
       </Route>
 
       {/* Authenticated routes */}

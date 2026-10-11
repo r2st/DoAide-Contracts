@@ -21,8 +21,8 @@ export default {
         bad: "var(--bad)",
       },
       fontFamily: {
-        display: ["Instrument Serif", "Georgia", "serif"],
-        body: ["Schibsted Grotesk", "system-ui", "sans-serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
       borderRadius: {

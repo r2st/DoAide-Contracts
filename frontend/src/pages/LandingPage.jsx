@@ -15,44 +15,43 @@ const PHRASES = [
 ];
 
 const PRODUCTS = [
-  { name: "Desk", url: "https://desk.doaide.com" },
-  { name: "Jobs", url: "https://jobs.doaide.com" },
-  { name: "Pulse", url: "https://pulse.doaide.com" },
-  { name: "Med", url: "https://med.doaide.com" },
-  { name: "Realty", url: "https://realty.doaide.com" },
-  { name: "Reach", url: "https://reach.doaide.com" },
-  { name: "Trade", url: "https://trade.doaide.com" },
   { name: "GST", url: "https://gst.doaide.com" },
   { name: "409A", url: "https://409a.doaide.com" },
+  { name: "Pulse", url: "https://pulse.doaide.com" },
+  { name: "Med", url: "https://med.doaide.com" },
+  { name: "Jobs", url: "https://job.doaide.com" },
+  { name: "Desk", url: "https://desk.doaide.com" },
+  { name: "Realty", url: "https://realty.doaide.com" },
+  { name: "Contracts", url: "https://contracts.doaide.com" },
 ];
 
 const TEMPLATE_ICONS = {
   lock: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
   ),
   briefcase: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>
   ),
   user: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
   ),
   home: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
   ),
   users: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
   ),
   handshake: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
   ),
   clipboard: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" /><line x1="8" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="12" y2="18" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" /><line x1="8" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="12" y2="18" /></svg>
   ),
   shield: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><line x1="9" y1="12" x2="15" y2="12" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><line x1="9" y1="12" x2="15" y2="12" /></svg>
   ),
   truck: (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="1" /><path d="M16 8h4l3 3v5h-7V8z" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="1" /><path d="M16 8h4l3 3v5h-7V8z" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg>
   ),
 };
 
@@ -91,42 +90,42 @@ const FEATURES = [
     title: "Free Contract Templates",
     desc: "NDA, Employment, Freelancer, Rental, Partnership, Service, Consulting, Non-Compete, and Vendor Agreement templates ready to use.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></svg>
     ),
   },
   {
     title: "Instant Contract Generator",
     desc: "Fill in your details, get a complete contract in 60 seconds. No sign-up needed.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
     ),
   },
   {
     title: "Clause Risk Checker",
     desc: "Paste any contract text to identify risky or missing clauses instantly.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><line x1="8" y1="11" x2="14" y2="11" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><line x1="8" y1="11" x2="14" y2="11" /></svg>
     ),
   },
   {
     title: "AI Contract Review",
     desc: "Upload contracts for AI-powered clause-by-clause risk analysis with actionable suggestions.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="12" y2="14" /><path d="M14 16l2 2 4-4" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="12" y2="14" /><path d="M14 16l2 2 4-4" /></svg>
     ),
   },
   {
     title: "Indian Law Compliant",
     desc: "All templates drafted for Indian legal requirements — Indian Contract Act, stamp duty, and jurisdiction.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
     ),
   },
   {
     title: "Share & Collaborate",
     desc: "Share contracts via WhatsApp or email. Send to your lawyer for review with one click.",
     icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /></svg>
     ),
   },
 ];
@@ -290,13 +289,17 @@ export default function LandingPage() {
       <header className={`landing-header ${vis}`}>
         <a href="https://doaide.com" className="landing-brand">
           <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-            <rect width="32" height="32" rx="6" fill="#0A0A0B"/>
-            <path d="M8 7h12a2 2 0 012 2v14a2 2 0 01-2 2H8V7z" fill="#F0B429" opacity="0.9"/>
-            <rect x="12" y="11" width="8" height="1.5" rx="0.75" fill="#0A0A0B"/>
-            <rect x="12" y="14.5" width="6" height="1.5" rx="0.75" fill="#0A0A0B"/>
-            <rect x="12" y="18" width="7" height="1.5" rx="0.75" fill="#0A0A0B"/>
+            <rect width="32" height="32" rx="6" fill="#0D9488"/>
+            <path d="M8 7h12a2 2 0 012 2v14a2 2 0 01-2 2H8V7z" fill="#fff" opacity="0.9"/>
+            <rect x="12" y="11" width="8" height="1.5" rx="0.75" fill="#0D9488"/>
+            <rect x="12" y="14.5" width="6" height="1.5" rx="0.75" fill="#0D9488"/>
+            <rect x="12" y="18" width="7" height="1.5" rx="0.75" fill="#0D9488"/>
           </svg>
-          <span className="landing-brand-text">DoAide <em>Contracts</em></span>
+          <span className="landing-brand-text">
+            <span className="landing-brand-teal">DoAide</span>
+            <span className="landing-brand-pipe"> | </span>
+            <span className="landing-brand-product">Contracts</span>
+          </span>
         </a>
         <div style={{ marginLeft: "auto", display: "flex", gap: "0.75rem", alignItems: "center" }}>
           <Link to="/pricing" className="landing-header-link">Pricing</Link>
@@ -478,11 +481,12 @@ export default function LandingPage() {
         <div className="landing-footer-bottom">
           <a href="https://doaide.com" className="landing-footer-home">
             <svg viewBox="0 0 32 32" width="16" height="16" aria-hidden="true">
-              <rect width="32" height="32" rx="6" fill="#F0B429"/>
-              <text x="16" y="22" textAnchor="middle" fontSize="16" fontWeight="700" fill="#0A0A0B">D</text>
+              <rect width="32" height="32" rx="6" fill="#0D9488"/>
+              <text x="16" y="22" textAnchor="middle" fontSize="16" fontWeight="700" fill="#fff">D</text>
             </svg>
             doaide.com
           </a>
+          <span className="landing-doaide-badge">A DoAide Product</span>
           <span className="landing-footer-copy">&copy; {new Date().getFullYear()} DoAide</span>
         </div>
       </footer>

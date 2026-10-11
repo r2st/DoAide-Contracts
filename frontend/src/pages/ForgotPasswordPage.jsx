@@ -29,7 +29,7 @@ export default function ForgotPasswordPage() {
   return (
     <div style={{ minHeight: "100vh", display: "grid", placeItems: "center", padding: "1.5rem", background: "var(--canvas)" }}>
       <div style={{ width: "100%", maxWidth: 380, textAlign: "center" }}>
-        <h1 style={{ fontFamily: "var(--doaide-font-display)", fontSize: 32, fontWeight: 400, margin: "0 0 8px" }}>
+        <h1 style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 32, fontWeight: 700, margin: "0 0 8px" }}>
           Reset password
         </h1>
         {sent ? (

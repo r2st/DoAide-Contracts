@@ -130,7 +130,7 @@ export default function PricingPage() {
           name: user.name,
         },
         theme: {
-          color: "#2563eb",
+          color: "#0D9488",
         },
         modal: {
           ondismiss: () => setBusy(null),
@@ -150,15 +150,15 @@ export default function PricingPage() {
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem" }}>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <span style={{ fontFamily: "var(--doaide-font-display)", fontSize: 24, color: "var(--ink-strong)" }}>
-              DoAide <span style={{ fontStyle: "italic", color: "var(--brand)" }}>Contracts</span>
+            <span style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 22, fontWeight: 700, color: "var(--ink-strong)" }}>
+              <span style={{ color: "#0D9488" }}>DoAide</span> <span style={{ color: "var(--ink-muted)", fontWeight: 300 }}>|</span> Contracts
             </span>
           </Link>
           <ThemeToggle />
         </div>
 
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h1 style={{ fontFamily: "var(--doaide-font-display)", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 400, margin: "0 0 12px" }}>
+          <h1 style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, margin: "0 0 12px" }}>
             Simple, transparent pricing
           </h1>
           <p style={{ color: "var(--ink-soft)", fontSize: "1rem", maxWidth: 500, margin: "0 auto" }}>

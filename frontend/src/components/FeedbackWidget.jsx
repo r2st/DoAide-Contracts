@@ -40,7 +40,7 @@ export default function FeedbackWidget() {
           left: 16,
           zIndex: 9999,
           padding: "8px 16px",
-          background: "#b8860b",
+          background: "#0D9488",
           color: "#fff",
           border: "none",
           borderRadius: 8,
@@ -118,7 +118,7 @@ export default function FeedbackWidget() {
                 disabled={status === "sending"}
                 style={{
                   padding: "8px 16px",
-                  background: "#b8860b",
+                  background: "#0D9488",
                   color: "#fff",
                   border: "none",
                   borderRadius: 8,

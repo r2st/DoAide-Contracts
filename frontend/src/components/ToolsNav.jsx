@@ -16,7 +16,7 @@ export default function ToolsNav() {
   return (
     <nav className="tools-nav" aria-label="Contract tools">
       <Link to="/" className="tools-nav-brand">
-        DoAide <em>Contracts</em>
+        <span className="teal">DoAide</span> <span className="pipe">|</span> <span className="product">Contracts</span>
       </Link>
       <div className="tools-nav-links">
         {TOOLS.map((t) => (

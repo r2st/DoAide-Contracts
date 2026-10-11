@@ -44,13 +44,13 @@ export default function Shell({ children }) {
       <header className="shell-header">
         <div className="brand">
           <svg viewBox="0 0 32 32" className="brand-icon" aria-hidden="true">
-            <rect width="32" height="32" rx="6" fill="#0A0A0B"/>
-            <path d="M8 7h12a2 2 0 012 2v14a2 2 0 01-2 2H8V7z" fill="#F0B429" opacity="0.9"/>
-            <rect x="12" y="11" width="8" height="1.5" rx="0.75" fill="#0A0A0B"/>
-            <rect x="12" y="14.5" width="6" height="1.5" rx="0.75" fill="#0A0A0B"/>
-            <rect x="12" y="18" width="7" height="1.5" rx="0.75" fill="#0A0A0B"/>
+            <rect width="32" height="32" rx="6" fill="#0D9488"/>
+            <path d="M8 7h12a2 2 0 012 2v14a2 2 0 01-2 2H8V7z" fill="#fff" opacity="0.9"/>
+            <rect x="12" y="11" width="8" height="1.5" rx="0.75" fill="#0D9488"/>
+            <rect x="12" y="14.5" width="6" height="1.5" rx="0.75" fill="#0D9488"/>
+            <rect x="12" y="18" width="7" height="1.5" rx="0.75" fill="#0D9488"/>
           </svg>
-          <span className="brand-name">DoAide <span className="brand-accent">Contracts</span></span>
+          <span className="brand-name"><span style={{ color: "#0D9488" }}>DoAide</span> <span className="brand-pipe">|</span> <span className="brand-accent">Contracts</span></span>
         </div>
 
         <button

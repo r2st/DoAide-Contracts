@@ -812,13 +812,16 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
   .share-buttons { display: flex; flex-wrap: wrap; }
   .share-btn { flex: 1 1 auto; }
   .generator-result-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .generator-result-actions .btn { flex: 1 1 100%; }
+  .generator-result-actions .btn { flex: 1 1 40%; }
+  .generator-result-actions .btn-primary { flex-basis: 100%; }
 }
 
 .onboarding-guide {
-  border: 1px solid var(--brand); border-radius: var(--radius); background: var(--surface);
+  border: 1px solid var(--brand); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
   padding: 1rem 1.25rem; margin: 0 0 1.5rem;
 }
+.onboarding-guide h2, .onboarding-guide strong { color: var(--ink); }
 .onboarding-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
 .onboarding-head h2 { margin: 0 0 0.75rem; font-size: 1.05rem; }
 .onboarding-close {

@@ -17,6 +17,7 @@ import SlaTemplateGuide from "./pages/blog/SlaTemplateGuide";
 import MarkdownPost from "./pages/blog/MarkdownPost";
 import CheckerPage from "./pages/CheckerPage";
 import ClauseLibraryPage from "./pages/ClauseLibraryPage";
+import ContractComparisonPage from "./pages/ContractComparisonPage";
 import ContractViewPage from "./pages/ContractViewPage";
 import DashboardPage from "./pages/DashboardPage";
 import EmbedPage from "./pages/EmbedPage";
@@ -100,6 +101,7 @@ export default function App() {
       <Route path="/tools/readability-scorer" element={<ReadabilityScorerPage />} />
       <Route path="/tools/risk-analyzer" element={<RiskAnalyzerPage />} />
       <Route path="/tools/stamp-duty-calculator" element={<StampDutyCalculatorPage />} />
+      <Route path="/tools/contract-comparison" element={<ContractComparisonPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 
       {/* Blog / SEO pages */}

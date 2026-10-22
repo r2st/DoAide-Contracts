@@ -6,6 +6,7 @@ const TOOLS = [
   { path: "/generator", label: "Generator" },
   { path: "/checker", label: "Clause Checker" },
   { path: "/tools/risk-analyzer", label: "Risk Analyzer" },
+  { path: "/tools/contract-comparison", label: "Compare" },
   { path: "/tools/stamp-duty-calculator", label: "Stamp Duty" },
   { path: "/tools/clause-library", label: "Clauses" },
 ];

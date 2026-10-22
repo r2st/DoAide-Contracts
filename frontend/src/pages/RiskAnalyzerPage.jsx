@@ -40,7 +40,10 @@ function ScoreGauge({ score }) {
 }
 
 export default function RiskAnalyzerPage() {
-  usePageTitle("Free Contract Risk Analyzer — AI-Powered Analysis for Indian Contracts");
+  usePageTitle(
+    "Free Contract Risk Analyzer — AI-Powered Analysis for Indian Contracts",
+    "Upload or paste a contract and get an AI analysis of risky clauses, missing protections and one-sided terms under Indian law. Free to try.",
+  );
   const [contractText, setContractText] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);

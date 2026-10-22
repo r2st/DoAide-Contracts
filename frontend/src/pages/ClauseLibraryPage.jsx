@@ -204,7 +204,10 @@ const FAQ_ITEMS = [
 ];
 
 export default function ClauseLibraryPage() {
-  usePageTitle("Free Contract Clause Library — 20+ Ready-to-Use Clauses");
+  usePageTitle(
+    "Free Contract Clause Library — 20+ Ready-to-Use Clauses",
+    "A library of 20+ ready-to-use contract clauses for Indian agreements, covering confidentiality, termination, indemnity, payment and dispute resolution.",
+  );
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
   const [copiedIdx, setCopiedIdx] = useState(null);

@@ -3,7 +3,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function ConsultingAgreementGuide() {
-  usePageTitle("Consulting Agreement Guide for Indian Businesses — Key Clauses & Template");
+  usePageTitle(
+    "Consulting Agreement Guide for Indian Businesses — Key Clauses & Template",
+    "Complete guide to drafting consulting agreements in India. Covers scope, IP rights, tax implications (TDS, GST), and key clauses with a free template.",
+  );
 
   return (
     <article className="blog-article">

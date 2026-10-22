@@ -3,7 +3,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function FreelancerAgreementGuide() {
-  usePageTitle("Freelancer Agreement Guide — Protect Your Business in India");
+  usePageTitle(
+    "Freelancer Agreement Guide — Protect Your Business in India",
+    "How businesses in India should draft freelancer agreements: scope of work, payment terms, IP ownership, confidentiality and termination clauses.",
+  );
 
   return (
     <article className="blog-article">

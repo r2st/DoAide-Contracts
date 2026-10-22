@@ -6,7 +6,10 @@ import { usePageTitle } from "../hooks/usePageTitle";
 import { TEMPLATES, fillTemplate, getTemplateBySlug } from "../lib/templates";
 
 export default function FreeGeneratorPage() {
-  usePageTitle("Free Contract Generator — Create Contracts in 60 Seconds");
+  usePageTitle(
+    "Free Contract Generator — Create Contracts in 60 Seconds",
+    "Create a contract in about a minute: pick a template, answer a few questions and download a ready-to-sign agreement drafted for Indian law. Free, no sign-up.",
+  );
   const [searchParams] = useSearchParams();
   const initialSlug = searchParams.get("template") || "";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);

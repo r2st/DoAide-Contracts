@@ -13,7 +13,10 @@ const DURATIONS = ["1 year", "2 years", "3 years", "5 years", "Indefinite"];
 const JURISDICTIONS = ["India", "United States", "United Kingdom", "Singapore", "Australia"];
 
 export default function NdaGeneratorPage() {
-  usePageTitle("Free NDA Generator");
+  usePageTitle(
+    "Free NDA Generator",
+    "Generate a mutual or one-way non-disclosure agreement for Indian businesses in minutes. Fill in the parties and terms, then download. Free, no sign-up.",
+  );
   const [type, setType] = useState("mutual");
   const [discloser, setDiscloser] = useState("");
   const [receiver, setReceiver] = useState("");

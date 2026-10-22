@@ -3,7 +3,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function EmploymentContractChecklist() {
-  usePageTitle("Employment Contract Checklist for Indian Companies 2026");
+  usePageTitle(
+    "Employment Contract Checklist for Indian Companies 2026",
+    "A clause-by-clause checklist for employment contracts in India: compensation, probation, notice period, IP assignment, non-compete and termination.",
+  );
 
   return (
     <article className="blog-article">

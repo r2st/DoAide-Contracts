@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const ARTICLES = [
   {
@@ -64,6 +65,10 @@ export default function BlogLayout() {
 }
 
 export function BlogIndex() {
+  usePageTitle(
+    "Contract Guides for Indian Businesses — NDAs, Employment, SLAs & Stamp Duty",
+    "Practical guides to drafting contracts in India: NDAs, employment contracts, freelancer and consulting agreements, SLAs, stamp duty and the Indian Contract Act.",
+  );
   return (
     <div className="blog-index">
       {ARTICLES.map((a) => (

@@ -43,7 +43,10 @@ function TemplatePreview({ body }) {
 }
 
 export default function FreeTemplatesPage() {
-  usePageTitle("Free Contract Templates India 2026 — NDA, Employment, Rental, Partnership");
+  usePageTitle(
+    "Free Contract Templates India 2026 — NDA, Employment, Rental, Partnership",
+    "Free contract templates for Indian businesses: NDA, employment, rental, partnership, freelancer, consulting and more. Customise online and download, no sign-up.",
+  );
   const [activeCategory, setActiveCategory] = useState("all");
   const [expandedSlug, setExpandedSlug] = useState(null);
 

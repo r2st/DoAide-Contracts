@@ -80,7 +80,10 @@ function formatINR(amount) {
 }
 
 export default function StampDutyCalculatorPage() {
-  usePageTitle("Stamp Duty Calculator India — All States & Document Types");
+  usePageTitle(
+    "Stamp Duty Calculator India — All States & Document Types",
+    "Calculate stamp duty for agreements in every Indian state: rental, sale, partnership, loan and more, with rates by document type.",
+  );
   const [state, setState] = useState("");
   const [docType, setDocType] = useState("saleDeed");
   const [value, setValue] = useState("");

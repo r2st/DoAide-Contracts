@@ -4,7 +4,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function FreelancerAgreementTemplateGuide() {
-  usePageTitle("Freelancer Agreement Template India: Protect Your Work and Get Paid");
+  usePageTitle(
+    "Freelancer Agreement Template India: Protect Your Work and Get Paid",
+    "Free freelancer agreement template for India. Learn how to protect your intellectual property, ensure timely payments, and draft enforceable contracts as a freelancer under Indian law.",
+  );
 
   useEffect(() => {
     const blogSchema = {

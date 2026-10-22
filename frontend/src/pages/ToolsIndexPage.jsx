@@ -14,7 +14,10 @@ const TOOLS = [
 ];
 
 export default function ToolsIndexPage() {
-  usePageTitle("Free Contract Tools — No Sign-up Required");
+  usePageTitle(
+    "Free Contract Tools — No Sign-up Required",
+    "Free contract tools for Indian businesses: NDA generator, clause library, risk analyzer, readability scorer and stamp duty calculator. No sign-up required.",
+  );
   return (
     <div className="tool-page">
       <ToolsNav />

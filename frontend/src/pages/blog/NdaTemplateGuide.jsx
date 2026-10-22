@@ -3,7 +3,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function NdaTemplateGuide() {
-  usePageTitle("Free NDA Template India 2026 — Download & Customize");
+  usePageTitle(
+    "Free NDA Template India 2026 — Download & Customize",
+    "Free NDA template for India with a guide to mutual vs one-way NDAs, key clauses, stamp duty and how to customise it for your business.",
+  );
 
   return (
     <article className="blog-article">

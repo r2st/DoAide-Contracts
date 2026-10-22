@@ -75,7 +75,10 @@ function scoreLabel(score) {
 const SAMPLE = `This Agreement (hereinafter referred to as the "Agreement") is entered into by and between the parties named herein. Notwithstanding any provision to the contrary, the parties shall forthwith comply with all obligations set forth hereunder. The aforementioned terms shall apply mutatis mutandis to any amendments made therein.`;
 
 export default function ReadabilityScorerPage() {
-  usePageTitle("Contract Readability Scorer");
+  usePageTitle(
+    "Contract Readability Scorer",
+    "Score how readable your contract is and find long sentences, legalese and passive voice to simplify. Free contract readability checker.",
+  );
   const [text, setText] = useState("");
 
   const result = analyzeReadability(text);

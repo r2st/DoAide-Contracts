@@ -4,7 +4,10 @@ import { usePageTitle } from "../hooks/usePageTitle";
 import { copyToClipboard, embedSnippet } from "../lib/share";
 
 export default function EmbedPage() {
-  usePageTitle("Embed Contract Generator on Your Website — Free Widget");
+  usePageTitle(
+    "Embed Contract Generator on Your Website — Free Widget",
+    "Add a free contract generator widget to your website. Copy one snippet to let your visitors create NDAs and agreements drafted for Indian law.",
+  );
   const [copied, setCopied] = useState(false);
 
   const snippet = embedSnippet();

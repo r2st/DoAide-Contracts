@@ -10,7 +10,10 @@ export default function TemplateDetailPage() {
   const template = getTemplateBySlug(slug);
   const [showFull, setShowFull] = useState(false);
 
-  usePageTitle(template ? `Free ${template.name} Template India 2026` : "Template not found");
+  usePageTitle(
+    template ? `Free ${template.name} Template India 2026` : "Template not found",
+    template?.description,
+  );
 
   if (!template) {
     return (

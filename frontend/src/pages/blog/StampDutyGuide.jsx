@@ -3,7 +3,10 @@ import ShareButtons from "../../components/ShareButtons";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function StampDutyGuide() {
-  usePageTitle("Stamp Duty on Contracts in India — Complete Guide for Businesses (2026)");
+  usePageTitle(
+    "Stamp Duty on Contracts in India — Complete Guide for Businesses (2026)",
+    "Complete guide to stamp duty on business contracts in India. State-wise rates, exemptions, penalties, and practical tips for compliance.",
+  );
 
   return (
     <article className="blog-article">

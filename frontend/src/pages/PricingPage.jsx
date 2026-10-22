@@ -73,7 +73,10 @@ function loadRazorpayScript() {
 }
 
 export default function PricingPage() {
-  usePageTitle("Pricing");
+  usePageTitle(
+    "Pricing",
+    "DoAide Contracts pricing: free contract templates and tools, plus paid plans for AI contract review and unlimited generation for Indian businesses.",
+  );
   const { user } = useAuth();
   const navigate = useNavigate();
   const [busy, setBusy] = useState(null);

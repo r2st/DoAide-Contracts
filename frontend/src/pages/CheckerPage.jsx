@@ -57,7 +57,10 @@ function SeverityBadge({ severity }) {
 }
 
 export default function CheckerPage() {
-  usePageTitle("Free Contract Clause Checker — Spot Risky Clauses Instantly");
+  usePageTitle(
+    "Free Contract Clause Checker — Spot Risky Clauses Instantly",
+    "Paste a contract clause and see which terms are risky or one-sided, with plain-English explanations. Free contract clause checker for Indian businesses.",
+  );
   const [contractText, setContractText] = useState("");
   const [result, setResult] = useState(null);
 

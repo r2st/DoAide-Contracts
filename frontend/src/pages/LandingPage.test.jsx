@@ -37,12 +37,6 @@ describe("LandingPage", () => {
     expect(screen.getByText("Check a Contract")).toBeInTheDocument();
   });
 
-  it("shows usage counter", () => {
-    renderLanding();
-    expect(screen.getByText(/businesses across India/)).toBeInTheDocument();
-    expect(screen.getByText("and growing")).toBeInTheDocument();
-  });
-
   it("shows instant tool cards", () => {
     renderLanding();
     expect(screen.getByText("Browse Templates")).toBeInTheDocument();
@@ -77,11 +71,11 @@ describe("LandingPage", () => {
     expect(screen.getByText("Clause Risk Checker")).toBeInTheDocument();
   });
 
-  it("shows testimonials", () => {
+  it("does not show unverifiable social proof", () => {
     renderLanding();
-    expect(screen.getByText("Vikram R.")).toBeInTheDocument();
-    expect(screen.getByText("Anita P.")).toBeInTheDocument();
-    expect(screen.getByText("Rohit K.")).toBeInTheDocument();
+    expect(screen.queryByText(/Trusted by Indian Businesses/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Used by/)).not.toBeInTheDocument();
+    expect(screen.getByText(/No sign-up · Works on your phone/)).toBeInTheDocument();
   });
 
   it("shows FAQ section", () => {

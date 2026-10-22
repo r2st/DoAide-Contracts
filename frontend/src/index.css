@@ -702,15 +702,9 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
 .landing-feature-card p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
 .landing-feature-icon { margin-bottom: 0.25rem; }
 
-.landing-testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-.landing-testimonial {
   padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); margin: 0;
 }
-.landing-testimonial p { font-style: italic; margin: 0 0 0.75rem; line-height: 1.6; }
-.landing-testimonial footer { display: flex; flex-direction: column; gap: 0.15rem; }
-.landing-testimonial footer strong { font-size: 0.9rem; }
-.landing-testimonial footer span { font-size: 0.82rem; color: var(--ink-soft); }
 
 .landing-faq { max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem; }
 .landing-faq-list { margin: 0; padding: 0; }
@@ -768,7 +762,6 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
   .landing-tool-cards { grid-template-columns: 1fr; }
   .landing-quickstart-grid { grid-template-columns: 1fr; }
   .landing-features-grid { grid-template-columns: 1fr; }
-  .landing-testimonials { grid-template-columns: 1fr; }
   .landing-footer-nav { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .blog-layout { padding: 1rem 0.75rem; }
   .blog-article h1 { font-size: 1.4rem; }

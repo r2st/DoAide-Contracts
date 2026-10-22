@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 import ShareButtons from "../components/ShareButtons";
@@ -172,58 +172,10 @@ const QUICK_START = [
   },
 ];
 
-function AnimatedCounter({ target, suffix = "+" }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
-      { threshold: 0.3 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!started) return;
-    const duration = 1500;
-    const steps = 40;
-    const increment = target / steps;
-    let current = 0;
-    const interval = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(interval);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, duration / steps);
-    return () => clearInterval(interval);
-  }, [started, target]);
-
-  const formatted = count.toLocaleString("en-IN");
-  return (
-    <span ref={ref} className="landing-animated-counter">
-      <strong>{formatted}{suffix}</strong>
-    </span>
-  );
-}
-
-const TESTIMONIALS = [
-  { name: "Vikram R.", role: "Startup Founder, Bangalore", quote: "Generated an NDA in 2 minutes. Sent it to my lawyer — she said it covered all the bases. Saved us ₹5,000 in legal fees." },
-  { name: "Anita P.", role: "HR Manager, Mumbai", quote: "We use DoAide for all our employment contracts now. The clause checker caught a missing IP assignment clause we'd been overlooking." },
-  { name: "Rohit K.", role: "Freelance Designer, Delhi", quote: "Finally, a freelancer agreement template that actually covers Indian tax implications. I send it to every new client." },
-];
-
 const FAQ_ITEMS = [
   { q: "Are these contract templates legally valid in India?", a: "Yes. Our templates are drafted following Indian Contract Act, 1872 provisions and include standard legal clauses. However, for high-value or complex agreements, we recommend having a lawyer review the final document." },
   { q: "Do I need to register contracts in India?", a: "Not all contracts need registration. However, lease agreements over 11 months, sale deeds, and partnership deeds should be registered under the Registration Act, 1908. Stamp duty applies to most commercial agreements." },
-  { q: "Is DoAide Contracts really free?", a: "Yes. Template browsing, contract generation, and clause checking are completely free with no sign-up required. Paid plans (from ₹399/month) add AI-powered contract review, e-signatures, and unlimited contract management." },
+  { q: "Is DoAide Contracts really free?", a: "Yes. Template browsing, contract generation, and clause checking are completely free with no sign-up required. Paid plans (from ₹399/month) add AI-powered contract review, and unlimited contract management." },
   { q: "Can I use these templates for my business?", a: "Absolutely. All templates are designed for Indian businesses and can be freely customized. We recommend reviewing the final document with legal counsel for mission-critical agreements." },
   { q: "What is a contract clause checker?", a: "Our clause checker analyzes your contract text to identify risky clauses (like unlimited liability or broad waivers) and flags missing standard clauses (like force majeure or dispute resolution). It's free and requires no sign-up." },
 ];
@@ -318,8 +270,8 @@ export default function LandingPage() {
             <Link to="/checker" className="btn btn-ghost btn-lg">Check a Contract</Link>
           </div>
           <p className="landing-instant-stat">
-            Used by <AnimatedCounter target={8500} /> businesses across India
-            <span className="landing-stat-sub">and growing</span>
+            Free forever · No sign-up · Works on your phone
+            <span className="landing-stat-sub">Your details stay in your browser</span>
           </p>
           <div className="landing-tool-cards">
             {INSTANT_TOOLS.map((t) => (
@@ -404,21 +356,6 @@ export default function LandingPage() {
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="landing-section" aria-labelledby="testimonials-heading">
-          <h2 id="testimonials-heading" className="landing-section-title">Trusted by Indian Businesses</h2>
-          <div className="landing-testimonials">
-            {TESTIMONIALS.map((t) => (
-              <blockquote key={t.name} className="landing-testimonial">
-                <p>&ldquo;{t.quote}&rdquo;</p>
-                <footer>
-                  <strong>{t.name}</strong>
-                  <span>{t.role}</span>
-                </footer>
-              </blockquote>
             ))}
           </div>
         </section>

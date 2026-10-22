@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { MARKDOWN_POSTS } from "./blog/markdownPosts";
 
 const ARTICLES = [
   {
@@ -71,7 +72,7 @@ export function BlogIndex() {
   );
   return (
     <div className="blog-index">
-      {ARTICLES.map((a) => (
+      {[...MARKDOWN_POSTS, ...ARTICLES].map((a) => (
         <Link key={a.slug} to={`/blog/${a.slug}`} className="blog-card">
           <h2>{a.title}</h2>
           <p>{a.description}</p>

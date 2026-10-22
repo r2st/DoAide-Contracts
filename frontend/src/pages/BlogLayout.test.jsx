@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import BlogLayout, { BlogIndex, ARTICLES } from "./BlogLayout";
+import { MARKDOWN_POSTS } from "./blog/markdownPosts";
 
 function renderBlog(path = "/blog") {
   return render(
@@ -56,7 +57,7 @@ describe("BlogIndex", () => {
   it("links to each article", () => {
     renderBlog();
     const readMoreLinks = screen.getAllByText("Read more →");
-    expect(readMoreLinks).toHaveLength(ARTICLES.length);
+    expect(readMoreLinks).toHaveLength(ARTICLES.length + MARKDOWN_POSTS.length);
   });
 
   it("has 9 articles", () => {

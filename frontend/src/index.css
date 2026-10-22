@@ -427,7 +427,7 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
 }
 
 @media (pointer: coarse) {
-  .btn, .nav-link { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .btn, .nav-link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -790,4 +790,31 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
   .tools-nav, .document-share, .share-buttons, .generator-result-actions,
   .generator-share-section, .feedback-widget, .tool-title, .tool-subtitle { display: none !important; }
   .generator-output, .template-body { border: 0; background: #fff; color: #000; }
+}
+
+/* Touch targets: 48px minimum on phones and touch screens. */
+@media (max-width: 768px), (pointer: coarse) {
+  .btn, .nav-link, .share-btn, .tools-nav-link, .tools-nav-cta, .landing-header-link,
+  .generator-template-btn, .landing-faq-q, .landing-tool-card, .breadcrumb a {
+    min-height: 48px;
+  }
+  .btn, .nav-link, .share-btn, .tools-nav-link, .tools-nav-cta, .landing-header-link {
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .theme-toggle { min-width: 48px; min-height: 48px; }
+  input, select { min-height: 48px; font-size: 16px; }
+  textarea { font-size: 16px; }
+  input[type="checkbox"], input[type="radio"] { min-height: 0; width: 22px; height: 22px; }
+  .landing-footer a, .landing-footer-col a { display: inline-flex; align-items: center; min-height: 48px; }
+}
+@media (max-width: 600px) {
+  /* One scrollable row of tools instead of three wrapped rows of tiny links. */
+  .tools-nav-links { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .tools-nav-links::-webkit-scrollbar { display: none; }
+  .tools-nav-link { flex: 0 0 auto; padding: 0 0.85rem; font-size: 0.9rem; }
+  .tools-nav-cta { padding: 0 1rem; font-size: 0.9rem; }
+  .share-buttons { display: flex; flex-wrap: wrap; }
+  .share-btn { flex: 1 1 auto; }
+  .generator-result-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .generator-result-actions .btn { flex: 1 1 100%; }
 }

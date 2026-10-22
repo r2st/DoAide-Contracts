@@ -406,6 +406,7 @@ export default function LandingPage() {
             <Link to="/blog/freelancer-agreement-guide">Freelancer Guide</Link>
             <Link to="/blog/consulting-agreement-guide">Consulting Guide</Link>
             <Link to="/blog/stamp-duty-guide-india">Stamp Duty Guide</Link>
+            <Link to="/vs/legalzoom">vs LegalZoom</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Product</h4>

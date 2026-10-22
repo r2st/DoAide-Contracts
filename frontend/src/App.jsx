@@ -40,6 +40,7 @@ import TemplateDetailPage from "./pages/TemplateDetailPage";
 import TemplateLibraryPage from "./pages/TemplateLibraryPage";
 import ToolsIndexPage from "./pages/ToolsIndexPage";
 import UploadPage from "./pages/UploadPage";
+import VsLegalZoomPage from "./pages/VsLegalZoomPage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 
 function Protected({ children }) {
@@ -102,6 +103,7 @@ export default function App() {
       <Route path="/tools/risk-analyzer" element={<RiskAnalyzerPage />} />
       <Route path="/tools/stamp-duty-calculator" element={<StampDutyCalculatorPage />} />
       <Route path="/tools/contract-comparison" element={<ContractComparisonPage />} />
+      <Route path="/vs/legalzoom" element={<VsLegalZoomPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 
       {/* Blog / SEO pages */}

@@ -343,6 +343,10 @@ export default function LandingPage() {
             <Link to="/pricing" className="landing-pricing-link">View all plans →</Link>
           </div>
           <div className="landing-right">
+            <p className="landing-account-note">
+              An account is optional. Templates, the generator and the clause checker
+              work without one — sign up only to save contracts and use AI review.
+            </p>
             <AuthForm />
           </div>
         </div>

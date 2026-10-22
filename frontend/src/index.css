@@ -775,3 +775,5 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
   .landing-referral { padding: 1.5rem 1rem; }
   .risk-results .stat-card { padding: 1rem; }
 }
+
+.landing-account-note { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 0.75rem; line-height: 1.5; }

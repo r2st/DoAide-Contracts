@@ -359,7 +359,7 @@ export default function ClauseLibraryPage() {
 
           <div className="calc-card" style={{ textAlign: "center" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--ink-soft)", marginBottom: "0.75rem" }}>Want to build full contracts from these clauses?</p>
-            <a href="/register" className="btn btn-primary" style={{ display: "inline-block" }}>Sign up free</a>
+            <a href="/generator" className="btn btn-primary" style={{ display: "inline-block" }}>Generate a contract — no sign-up</a>
           </div>
         </div>
       </main>

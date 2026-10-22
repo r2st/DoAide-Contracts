@@ -60,9 +60,9 @@ describe("ClauseLibraryPage", () => {
     expect(scripts.length).toBeGreaterThanOrEqual(2);
   });
 
-  it("renders sign-up CTA", () => {
+  it("sends the CTA to the no-sign-up generator", () => {
     render(<MemoryRouter><ClauseLibraryPage /></MemoryRouter>);
-    const links = screen.getAllByText("Sign up free");
-    expect(links.length).toBeGreaterThanOrEqual(1);
+    const link = screen.getByText("Generate a contract — no sign-up");
+    expect(link.closest("a")).toHaveAttribute("href", "/generator");
   });
 });

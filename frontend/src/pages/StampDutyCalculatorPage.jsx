@@ -237,7 +237,7 @@ export default function StampDutyCalculatorPage() {
             <p style={{ fontSize: "0.9rem", color: "var(--ink-soft)", marginBottom: "0.75rem" }}>
               Need a contract for your property transaction? Generate one instantly.
             </p>
-            <a href="/register" className="btn btn-primary" style={{ display: "inline-block" }}>Sign up free</a>
+            <a href="/generator" className="btn btn-primary" style={{ display: "inline-block" }}>Generate a contract — no sign-up</a>
           </div>
         </div>
       </main>

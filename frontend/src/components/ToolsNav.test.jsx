@@ -30,8 +30,9 @@ describe("ToolsNav", () => {
     expect(link.className).toContain("active");
   });
 
-  it("shows sign up CTA", () => {
+  it("points the CTA at the free generator, not sign-up", () => {
     renderNav();
-    expect(screen.getByText("Sign up free")).toBeInTheDocument();
+    expect(screen.getByText("Create contract").closest("a")).toHaveAttribute("href", "/generator");
+    expect(screen.queryByText("Sign up free")).not.toBeInTheDocument();
   });
 });

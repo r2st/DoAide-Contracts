@@ -12,6 +12,21 @@ describe("TEMPLATES", () => {
     expect(getTemplateBySlug("vendor-agreement")).not.toBeNull();
   });
 
+  it("includes the internship and loan agreement templates", () => {
+    expect(getTemplateBySlug("internship-agreement")).not.toBeNull();
+    expect(getTemplateBySlug("loan-agreement")).not.toBeNull();
+  });
+
+  it("every placeholder in a body has a matching field", () => {
+    for (const t of TEMPLATES) {
+      const keys = new Set(t.fields.map((f) => f.key));
+      const placeholders = [...t.body.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]);
+      for (const p of placeholders) {
+        expect(keys, `${t.slug} uses {{${p}}} without a field`).toContain(p);
+      }
+    }
+  });
+
   it("each template has required fields", () => {
     for (const t of TEMPLATES) {
       expect(t.slug).toBeTruthy();

@@ -761,6 +761,153 @@ ________________________          ________________________
 {{buyer_name}}                    {{vendor_name}}
 (Authorized Signatory)            (Authorized Signatory)`,
   },
+  {
+    slug: "internship-agreement",
+    name: "Internship Agreement",
+    category: "employment",
+    description: "Internship agreement for Indian companies and startups. Covers stipend, duration, work hours, confidentiality, IP assignment, and certificate of completion.",
+    icon: "briefcase",
+    fields: [
+      { key: "company_name", label: "Company Name", type: "text", required: true, placeholder: "e.g. Acme Pvt Ltd" },
+      { key: "intern_name", label: "Intern Name", type: "text", required: true, placeholder: "e.g. Priya Sharma" },
+      { key: "role_title", label: "Internship Role", type: "text", required: true, placeholder: "e.g. Software Engineering Intern" },
+      { key: "start_date", label: "Start Date", type: "date", required: true },
+      { key: "duration_months", label: "Duration (months)", type: "select", options: ["1", "2", "3", "6", "12"], required: true },
+      { key: "stipend_amount", label: "Monthly Stipend (Rs.)", type: "text", required: true, placeholder: "e.g. 15,000 (enter 0 if unpaid)" },
+      { key: "work_mode", label: "Work Mode", type: "select", options: ["In-office", "Remote", "Hybrid"], required: true },
+      { key: "supervisor_name", label: "Reporting Manager", type: "text", required: false, placeholder: "e.g. Rahul Verma" },
+      { key: "governing_state", label: "Governing State", type: "text", required: true, placeholder: "e.g. Karnataka" },
+    ],
+    body: `INTERNSHIP AGREEMENT
+
+This Internship Agreement ("Agreement") is entered into as of {{start_date}},
+
+BETWEEN:
+
+{{company_name}} (hereinafter referred to as the "Company"),
+
+AND
+
+{{intern_name}} (hereinafter referred to as the "Intern").
+
+1. POSITION AND DUTIES
+The Company engages the Intern as {{role_title}}. The Intern shall perform the tasks and projects assigned by the Company and shall report to {{supervisor_name}} or such other person as the Company may designate.
+
+2. NATURE OF ENGAGEMENT
+This is a training and learning engagement. The Intern is not an employee of the Company, and nothing in this Agreement creates an employer-employee relationship, nor entitles the Intern to employee benefits such as provident fund, gratuity, or paid leave, except as required by applicable law.
+
+3. TERM
+The internship shall commence on {{start_date}} and continue for {{duration_months}} month(s), unless terminated earlier in accordance with this Agreement. Completion of the internship does not create any obligation on the Company to offer employment.
+
+4. STIPEND
+The Company shall pay the Intern a stipend of Rs. {{stipend_amount}} per month, payable monthly in arrears, subject to deduction of taxes as applicable. No other compensation or benefits shall be payable.
+
+5. WORK MODE AND HOURS
+The internship shall be carried out in {{work_mode}} mode. The Intern shall observe the Company's working hours, policies, and codes of conduct as communicated from time to time.
+
+6. CONFIDENTIALITY
+The Intern shall keep confidential all non-public information of the Company, its clients and partners, learned during the internship, and shall not use or disclose such information except as required to perform assigned duties. This obligation survives the end of the internship.
+
+7. INTELLECTUAL PROPERTY
+All work product, inventions, code, designs, content, and other materials created by the Intern in the course of the internship shall be the sole and exclusive property of the Company. The Intern hereby assigns all rights, title, and interest in such work product to the Company.
+
+8. CONDUCT AND COMPLIANCE
+The Intern shall comply with all Company policies, including those on workplace behaviour, data protection, and IT usage, and shall not engage in any activity that conflicts with the interests of the Company during the internship.
+
+9. TERMINATION
+Either party may terminate this Agreement with 7 days' written notice. The Company may terminate immediately for misconduct, breach of confidentiality, or extended unauthorised absence. Upon termination, the Intern shall return all Company property and materials.
+
+10. CERTIFICATE
+Upon satisfactory completion of the internship, the Company shall issue the Intern a certificate of completion stating the role and duration of the internship.
+
+11. GOVERNING LAW
+This Agreement shall be governed by the laws of {{governing_state}}, India. Any disputes shall be subject to the exclusive jurisdiction of courts in {{governing_state}}.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+
+________________________          ________________________
+{{company_name}}                  {{intern_name}}
+(Authorized Signatory)            (Intern)`,
+  },
+  {
+    slug: "loan-agreement",
+    name: "Loan Agreement (Personal / Friendly Loan)",
+    category: "msa",
+    description: "Simple loan agreement between individuals or between a director and company. Covers loan amount, interest, repayment schedule, default, and prepayment.",
+    icon: "handshake",
+    fields: [
+      { key: "lender_name", label: "Lender Name", type: "text", required: true, placeholder: "e.g. Suresh Kumar" },
+      { key: "borrower_name", label: "Borrower Name", type: "text", required: true, placeholder: "e.g. Amit Patel" },
+      { key: "loan_amount", label: "Loan Amount (Rs.)", type: "text", required: true, placeholder: "e.g. 2,00,000" },
+      { key: "loan_amount_words", label: "Loan Amount in Words", type: "text", required: true, placeholder: "e.g. Rupees Two Lakh only" },
+      { key: "interest_rate", label: "Interest Rate (% per annum)", type: "text", required: true, placeholder: "e.g. 12 (enter 0 for interest-free)" },
+      { key: "disbursement_date", label: "Disbursement Date", type: "date", required: true },
+      { key: "repayment_months", label: "Repayment Period (months)", type: "select", options: ["3", "6", "12", "18", "24", "36"], required: true },
+      { key: "repayment_mode", label: "Repayment Mode", type: "select", options: ["Monthly instalments", "Lump sum on maturity"], required: true },
+      { key: "governing_state", label: "Governing State", type: "text", required: true, placeholder: "e.g. Gujarat" },
+    ],
+    body: `LOAN AGREEMENT
+
+This Loan Agreement ("Agreement") is entered into as of {{disbursement_date}},
+
+BETWEEN:
+
+{{lender_name}} (hereinafter referred to as the "Lender"),
+
+AND
+
+{{borrower_name}} (hereinafter referred to as the "Borrower").
+
+1. LOAN
+The Lender agrees to lend to the Borrower, and the Borrower agrees to borrow from the Lender, a sum of Rs. {{loan_amount}} ({{loan_amount_words}}) (the "Loan").
+
+2. DISBURSEMENT
+The Loan shall be disbursed on or about {{disbursement_date}} by bank transfer, cheque, or other traceable banking channel. The Borrower acknowledges receipt of the Loan upon credit to the Borrower's account.
+
+3. INTEREST
+The Loan shall carry simple interest at the rate of {{interest_rate}}% per annum, calculated from the date of disbursement until the date of full repayment.
+
+4. REPAYMENT
+The Borrower shall repay the Loan together with interest within {{repayment_months}} month(s) from the date of disbursement, by way of {{repayment_mode}}. All repayments shall be made through traceable banking channels.
+
+5. PREPAYMENT
+The Borrower may prepay the Loan, in full or in part, at any time without penalty. Prepayments shall first be applied towards accrued interest and then towards the principal.
+
+6. DEFAULT
+If the Borrower fails to make any payment within 15 days of its due date:
+(a) The entire outstanding balance, with accrued interest, shall become immediately due and payable on demand by the Lender;
+(b) The overdue amount shall carry additional interest at 2% per annum over the agreed rate until paid;
+(c) The Lender may exercise all remedies available under applicable law.
+
+7. USE OF FUNDS
+The Borrower shall use the Loan only for lawful purposes.
+
+8. REPRESENTATIONS
+Each party represents that it has full capacity to enter into this Agreement and that this Agreement constitutes a valid and binding obligation enforceable in accordance with its terms.
+
+9. NOTICES
+All notices under this Agreement shall be in writing and delivered personally, by registered post, or by email to the addresses the parties notify to each other.
+
+10. STAMP DUTY
+This Agreement shall be executed on non-judicial stamp paper of appropriate value as applicable in {{governing_state}}, and the stamp duty shall be borne by the Borrower unless agreed otherwise.
+
+11. GOVERNING LAW AND JURISDICTION
+This Agreement shall be governed by the laws of India, and the courts at {{governing_state}} shall have exclusive jurisdiction over any disputes arising out of this Agreement.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+
+________________________          ________________________
+{{lender_name}}                   {{borrower_name}}
+(Lender)                          (Borrower)
+
+WITNESSES:
+
+1. Name: ____________________  Signature: ____________________
+
+2. Name: ____________________  Signature: ____________________`,
+  },
 ];
 
 export function getTemplateBySlug(slug) {

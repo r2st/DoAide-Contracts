@@ -850,5 +850,9 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
 .md-post th, .md-post td { border: 1px solid var(--line); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
 .md-post th { background: var(--surface); }
 .md-faq { border: 1px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; background: var(--surface); }
-.md-faq summary { cursor: pointer; font-weight: 600; }
+.md-faq summary { cursor: pointer; font-weight: 600; padding: 0.35rem 0; }
 .md-faq p { margin: 0.5rem 0 0; color: var(--ink-soft); }
+@media (max-width: 768px), (pointer: coarse) {
+  /* FAQ accordions get a comfortable thumb target. */
+  .md-faq summary { min-height: 48px; display: flex; align-items: center; }
+}

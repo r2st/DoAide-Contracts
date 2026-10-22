@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
 import FreeTemplatesPage from "./FreeTemplatesPage";
+import { TEMPLATES } from "../lib/templates";
 
 vi.mock("../hooks/usePageTitle", () => ({ usePageTitle: () => {} }));
 vi.mock("../lib/share", () => ({
@@ -50,12 +51,12 @@ describe("FreeTemplatesPage", () => {
   it("shows preview snippets for each template", () => {
     renderPage();
     const snippets = document.querySelectorAll(".template-preview-snippet");
-    expect(snippets.length).toBe(9);
+    expect(snippets.length).toBe(TEMPLATES.length);
   });
 
   it("shows field count for each template", () => {
     renderPage();
-    expect(screen.getAllByText(/\d+ fields/).length).toBe(9);
+    expect(screen.getAllByText(/\d+ fields/).length).toBe(TEMPLATES.length);
   });
 
   it("shows category filter buttons", () => {
@@ -75,7 +76,7 @@ describe("FreeTemplatesPage", () => {
   it("shows quick preview toggle", async () => {
     renderPage();
     const toggles = screen.getAllByText("Quick preview");
-    expect(toggles.length).toBe(9);
+    expect(toggles.length).toBe(TEMPLATES.length);
   });
 
   it("expands preview on quick preview click", async () => {
@@ -88,6 +89,6 @@ describe("FreeTemplatesPage", () => {
 
   it("shows template count", () => {
     renderPage();
-    expect(screen.getByText("9 templates")).toBeInTheDocument();
+    expect(screen.getByText(`${TEMPLATES.length} templates`)).toBeInTheDocument();
   });
 });

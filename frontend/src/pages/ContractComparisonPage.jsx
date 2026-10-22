@@ -254,6 +254,7 @@ export default function ContractComparisonPage() {
                         background: ROW_TONES[row.type].bg,
                         fontSize: "0.82rem",
                         lineHeight: 1.45,
+                        overflowWrap: "anywhere",
                       }}
                     >
                       <span aria-hidden="true" style={{ fontWeight: 700, color: "var(--ink-muted)" }}>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ToolsNav from "../components/ToolsNav";
 import DocumentShare from "../components/DocumentShare";
+import OnboardingGuide from "../components/OnboardingGuide";
 import ShareButtons from "../components/ShareButtons";
 import { usePageTitle } from "../hooks/usePageTitle";
 import { TEMPLATES, fillTemplate, getTemplateBySlug } from "../lib/templates";
@@ -51,6 +52,8 @@ export default function FreeGeneratorPage() {
             Pick a template, fill in your details, and get an instant contract preview.
             No sign-up required.
           </p>
+
+          {!generated && <OnboardingGuide />}
 
           {!template && (
             <div className="generator-select">

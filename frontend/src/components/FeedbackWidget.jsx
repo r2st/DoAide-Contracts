@@ -32,6 +32,7 @@ export default function FeedbackWidget() {
   return (
     <>
       <button
+        className="feedback-widget"
         onClick={() => setOpen(true)}
         aria-label="Send feedback"
         style={{

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ToolsNav from "../components/ToolsNav";
+import DocumentShare from "../components/DocumentShare";
 import ShareButtons from "../components/ShareButtons";
 import { usePageTitle } from "../hooks/usePageTitle";
 import { TEMPLATES, fillTemplate, getTemplateBySlug } from "../lib/templates";
@@ -152,6 +153,8 @@ export default function FreeGeneratorPage() {
                 </div>
               </div>
 
+              <DocumentShare title={template.name} body={generated} toolPath="/generator" />
+
               <pre className="template-body generator-output">{generated}</pre>
 
               <div className="generator-share-section">
@@ -160,15 +163,6 @@ export default function FreeGeneratorPage() {
                   text="Generate free contracts instantly — NDA, Employment, Rental, and more"
                   label="Share generator"
                 />
-                <a
-                  href={`https://wa.me/?text=${encodeURIComponent("Here's the contract I generated — please review: https://contracts.doaide.com/generator")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-ghost"
-                  style={{ marginTop: "0.75rem" }}
-                >
-                  Share with your lawyer
-                </a>
               </div>
             </div>
           )}

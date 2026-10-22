@@ -777,3 +777,17 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--ba
 }
 
 .landing-account-note { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 0.75rem; line-height: 1.5; }
+
+.document-share { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 1rem; }
+.document-share .btn { text-align: center; }
+.document-share-whatsapp { background: #25d366; border-color: #25d366; color: #fff; }
+.document-share-whatsapp:hover { background: #1ebe5b; border-color: #1ebe5b; }
+@media (max-width: 640px) {
+  .document-share .btn { flex: 1 1 100%; }
+}
+
+@media print {
+  .tools-nav, .document-share, .share-buttons, .generator-result-actions,
+  .generator-share-section, .feedback-widget, .tool-title, .tool-subtitle { display: none !important; }
+  .generator-output, .template-body { border: 0; background: #fff; color: #000; }
+}

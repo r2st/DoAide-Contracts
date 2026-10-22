@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ToolsNav from "../components/ToolsNav";
+import DocumentShare from "../components/DocumentShare";
 import ShareButtons from "../components/ShareButtons";
 import { usePageTitle } from "../hooks/usePageTitle";
 
@@ -143,13 +144,14 @@ Generated with DoAide Contracts — https://contracts.doaide.com/tools/nda-gener
                 <pre style={{ whiteSpace: "pre-wrap", fontFamily: "monospace", fontSize: "0.85rem", lineHeight: 1.6, color: "var(--ink)", background: "var(--bg-canvas)", padding: "1rem", borderRadius: "8px", overflow: "auto" }}>
                   {ndaText}
                 </pre>
+                <DocumentShare title="Non-Disclosure Agreement" body={ndaText} toolPath="/tools/nda-generator" />
               </div>
 
               <ShareButtons path="/tools/nda-generator" text="Free NDA Generator — DoAide Contracts" />
 
               <div className="calc-card" style={{ textAlign: "center" }}>
-                <p style={{ fontSize: "0.9rem", color: "var(--ink-soft)", marginBottom: "0.75rem" }}>Want to save your NDAs and track signatures?</p>
-                <a href="/" className="btn btn-primary" style={{ display: "inline-block" }}>Sign up free</a>
+                <p style={{ fontSize: "0.9rem", color: "var(--ink-soft)", marginBottom: "0.75rem" }}>Need an employment, rental or freelancer agreement too?</p>
+                <a href="/generator" className="btn btn-primary" style={{ display: "inline-block" }}>More free contracts</a>
               </div>
             </>
           )}

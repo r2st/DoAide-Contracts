@@ -213,6 +213,8 @@ export default function ClauseLibraryPage() {
   const [copiedIdx, setCopiedIdx] = useState(null);
   const [expandedIdx, setExpandedIdx] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
+  const [builder, setBuilder] = useState([]);
+  const [builderCopied, setBuilderCopied] = useState(false);
 
   const filtered = CLAUSES.filter((c) => {
     if (filter !== "All" && c.category !== filter) return false;
@@ -233,6 +235,36 @@ export default function ClauseLibraryPage() {
       await navigator.clipboard.writeText(text);
       setCopiedIdx(idx);
       setTimeout(() => setCopiedIdx(null), 2000);
+    } catch { /* clipboard unavailable */ }
+  };
+
+  const addToBuilder = (clause) => {
+    if (builder.some((c) => c.title === clause.title)) return;
+    setBuilder((prev) => [...prev, clause]);
+  };
+
+  const removeFromBuilder = (idx) => {
+    setBuilder((prev) => prev.filter((_, i) => i !== idx));
+  };
+
+  const moveInBuilder = (idx, dir) => {
+    setBuilder((prev) => {
+      const next = [...prev];
+      const target = idx + dir;
+      if (target < 0 || target >= next.length) return next;
+      [next[idx], next[target]] = [next[target], next[idx]];
+      return next;
+    });
+  };
+
+  const copyBuilderText = async () => {
+    const text = builder
+      .map((c, i) => `${i + 1}. ${c.title.toUpperCase()}\n\n${c.text}`)
+      .join("\n\n" + "─".repeat(60) + "\n\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      setBuilderCopied(true);
+      setTimeout(() => setBuilderCopied(false), 2000);
     } catch { /* clipboard unavailable */ }
   };
 
@@ -270,6 +302,43 @@ export default function ClauseLibraryPage() {
             })}
           </div>
 
+          {/* Clause Builder Panel */}
+          {builder.length > 0 && (
+            <div className="calc-card" style={{ borderLeft: "3px solid var(--brand)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
+                <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--ink)", margin: 0 }}>
+                  Clause Builder ({builder.length} selected)
+                </h2>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <button className="btn btn-primary" style={{ fontSize: "0.8rem" }} onClick={copyBuilderText}>
+                    {builderCopied ? "Copied!" : "Copy all clauses"}
+                  </button>
+                  <button className="btn btn-ghost" style={{ fontSize: "0.8rem" }} onClick={() => setBuilder([])}>
+                    Clear
+                  </button>
+                </div>
+              </div>
+              <p style={{ fontSize: "0.8rem", color: "var(--ink-soft)", margin: "0 0 0.5rem" }}>
+                Reorder clauses with the arrows, then copy all at once.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                {builder.map((clause, i) => (
+                  <div key={clause.title} style={{
+                    display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.4rem 0.6rem",
+                    background: "var(--surface-dim, rgba(0,0,0,0.15))", borderRadius: "6px", fontSize: "0.82rem",
+                  }}>
+                    <span style={{ color: "var(--ink-soft)", minWidth: "1.5em", textAlign: "center", fontWeight: 600 }}>{i + 1}</span>
+                    <span style={{ flex: 1, color: "var(--ink)" }}>{clause.title}</span>
+                    <span style={{ fontSize: "0.7rem", color: "var(--brand)" }}>{clause.category}</span>
+                    <button onClick={() => moveInBuilder(i, -1)} disabled={i === 0} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink-soft)", padding: "2px", fontSize: "0.9rem" }} aria-label="Move up">↑</button>
+                    <button onClick={() => moveInBuilder(i, 1)} disabled={i === builder.length - 1} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink-soft)", padding: "2px", fontSize: "0.9rem" }} aria-label="Move down">↓</button>
+                    <button onClick={() => removeFromBuilder(i)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink-soft)", padding: "2px", fontSize: "0.9rem" }} aria-label="Remove">×</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {filtered.length === 0 && (
             <div className="calc-card" style={{ textAlign: "center", color: "var(--ink-soft)" }}>
               No clauses match your search. Try a different keyword.
@@ -287,9 +356,14 @@ export default function ClauseLibraryPage() {
                       <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--brand)", fontWeight: 600 }}>{clause.category}</span>
                       <h3 style={{ margin: "0.25rem 0 0.5rem", fontSize: "1rem", fontWeight: 600, color: "var(--ink)" }}>{clause.title}</h3>
                     </div>
-                    <button className="btn btn-ghost" style={{ flexShrink: 0, fontSize: "0.8rem", minHeight: "44px" }} onClick={() => copyClause(globalIdx, clause.text)}>
-                      {copiedIdx === globalIdx ? "Copied!" : "Copy"}
-                    </button>
+                    <div style={{ display: "flex", gap: "0.25rem", flexShrink: 0 }}>
+                      <button className="btn btn-ghost" style={{ fontSize: "0.8rem", minHeight: "44px" }} onClick={() => addToBuilder(clause)}>
+                        {builder.some((c) => c.title === clause.title) ? "Added ✓" : "+ Builder"}
+                      </button>
+                      <button className="btn btn-ghost" style={{ fontSize: "0.8rem", minHeight: "44px" }} onClick={() => copyClause(globalIdx, clause.text)}>
+                        {copiedIdx === globalIdx ? "Copied!" : "Copy"}
+                      </button>
+                    </div>
                   </div>
                   <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--ink-soft)", margin: "0 0 0.75rem" }}>{clause.explanation}</p>
                   <div style={{

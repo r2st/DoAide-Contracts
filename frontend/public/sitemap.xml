@@ -31,6 +31,9 @@
   <url><loc>https://contracts.doaide.com/tools/nda-generator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/tools/readability-scorer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/tools/contract-comparison</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/tools/e-signature-placeholder</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/tools/version-history</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://contracts.doaide.com/tools/template-customizer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://contracts.doaide.com/vs/legalzoom</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/indian-contract-act-essential-clauses</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/freelancer-agreement-template-india</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -40,4 +43,5 @@
   <url><loc>https://contracts.doaide.com/blog/vendor-agreement-format-india</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/free-contract-templates-india-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://contracts.doaide.com/blog/how-to-write-an-nda</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://contracts.doaide.com/blog/indian-business-contract-essentials-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

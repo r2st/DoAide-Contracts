@@ -41,6 +41,9 @@ import TemplateLibraryPage from "./pages/TemplateLibraryPage";
 import ToolsIndexPage from "./pages/ToolsIndexPage";
 import UploadPage from "./pages/UploadPage";
 import VsLegalZoomPage from "./pages/VsLegalZoomPage";
+import ESignaturePlaceholderPage from "./pages/ESignaturePlaceholderPage";
+import VersionHistoryPage from "./pages/VersionHistoryPage";
+import TemplateCustomizerPage from "./pages/TemplateCustomizerPage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 
 function Protected({ children }) {
@@ -103,6 +106,9 @@ export default function App() {
       <Route path="/tools/risk-analyzer" element={<RiskAnalyzerPage />} />
       <Route path="/tools/stamp-duty-calculator" element={<StampDutyCalculatorPage />} />
       <Route path="/tools/contract-comparison" element={<ContractComparisonPage />} />
+      <Route path="/tools/e-signature-placeholder" element={<ESignaturePlaceholderPage />} />
+      <Route path="/tools/version-history" element={<VersionHistoryPage />} />
+      <Route path="/tools/template-customizer" element={<TemplateCustomizerPage />} />
       <Route path="/vs/legalzoom" element={<VsLegalZoomPage />} />
       <Route path="/embed" element={<EmbedPage />} />
 

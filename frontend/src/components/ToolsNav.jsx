@@ -9,6 +9,9 @@ const TOOLS = [
   { path: "/tools/contract-comparison", label: "Compare" },
   { path: "/tools/stamp-duty-calculator", label: "Stamp Duty" },
   { path: "/tools/clause-library", label: "Clauses" },
+  { path: "/tools/e-signature-placeholder", label: "E-Sign" },
+  { path: "/tools/version-history", label: "Versions" },
+  { path: "/tools/template-customizer", label: "Customizer" },
 ];
 
 export default function ToolsNav() {

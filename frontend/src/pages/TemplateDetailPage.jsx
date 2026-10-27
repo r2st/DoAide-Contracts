@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ToolsNav from "../components/ToolsNav";
 import ShareButtons from "../components/ShareButtons";
@@ -14,6 +14,23 @@ export default function TemplateDetailPage() {
     template ? `Free ${template.name} Template India 2026` : "Template not found",
     template?.description,
   );
+
+  useEffect(() => {
+    if (!template) return;
+    const el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: `Free ${template.name} Template India 2026`,
+      description: template.description,
+      url: `https://contracts.doaide.com/template/${slug}`,
+      publisher: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+      inLanguage: "en-IN",
+    });
+    document.head.appendChild(el);
+    return () => el.remove();
+  }, [template, slug]);
 
   if (!template) {
     return (

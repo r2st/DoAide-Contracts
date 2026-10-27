@@ -7,6 +7,7 @@ export default function IndianContractActGuide() {
   usePageTitle(
     "Indian Contract Act 1872: Essential Clauses Every Business Agreement Needs",
     "Comprehensive guide to the Indian Contract Act 1872 — essential clauses, enforceability requirements, and practical tips for drafting legally sound business agreements in India.",
+    "article",
   );
 
   useEffect(() => {

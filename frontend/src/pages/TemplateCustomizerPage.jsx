@@ -263,7 +263,7 @@ export default function TemplateCustomizerPage() {
                       />
                     )}
                     <div>
-                      <h1 style={{
+                      <div style={{
                         color: config.primaryColor,
                         fontSize: config.headerStyle === "minimal" ? "1.2rem" : "1.5rem",
                         fontWeight: config.headerStyle === "classic" ? 400 : 700,
@@ -271,7 +271,7 @@ export default function TemplateCustomizerPage() {
                         ...(config.headerStyle === "classic" ? { textTransform: "uppercase", letterSpacing: "0.05em" } : {}),
                       }}>
                         Service Agreement
-                      </h1>
+                      </div>
                       <div style={{ fontSize: "0.85rem", color: `${config.secondaryColor}99`, marginTop: "0.25rem" }}>
                         {config.companyName}
                       </div>
@@ -391,7 +391,7 @@ export default function TemplateCustomizerPage() {
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-            author: { "@type": "Organization", name: "Apprend Technologies", url: "https://doaide.com" },
+            author: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
           }),
         }}
       />

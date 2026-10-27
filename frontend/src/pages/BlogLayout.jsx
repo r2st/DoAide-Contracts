@@ -57,7 +57,7 @@ export default function BlogLayout() {
     <div className="blog-layout">
       <header className="blog-header">
         <Link to="/" className="blog-home-link">← Back to DoAide Contracts</Link>
-        <h1 className="blog-title">DoAide Contracts Blog</h1>
+        <p className="blog-title">DoAide Contracts Blog</p>
         <p className="blog-subtitle">Guides and resources for contract management in India</p>
       </header>
       <Outlet />

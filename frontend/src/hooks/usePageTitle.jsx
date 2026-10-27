@@ -44,7 +44,8 @@ function setMeta(attr, key, content) {
 
 // `description`, when given, becomes the page's meta description (and its Open
 // Graph/Twitter twins); scripts/prerender.mjs bakes it into the static HTML.
-export function usePageTitle(title, description) {
+// `ogType` defaults to "website"; blog posts should pass "article".
+export function usePageTitle(title, description, ogType) {
   const set = useContext(PageTitleContext);
   useEffect(() => {
     if (set) set(title);
@@ -54,7 +55,8 @@ export function usePageTitle(title, description) {
       setMeta("property", "og:description", description);
       setMeta("name", "twitter:description", description);
     }
-  }, [set, title, description]);
+    setMeta("property", "og:type", ogType || "website");
+  }, [set, title, description, ogType]);
 }
 
 export { DEFAULT_TITLE, formatTitle };

@@ -242,7 +242,7 @@ export default function RiskAnalyzerPage() {
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-            author: { "@type": "Organization", name: "Apprend Technologies", url: "https://doaide.com" },
+            author: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
           }),
         }}
       />

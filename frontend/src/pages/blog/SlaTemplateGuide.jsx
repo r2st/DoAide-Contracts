@@ -7,6 +7,7 @@ export default function SlaTemplateGuide() {
   usePageTitle(
     "Service Level Agreement (SLA) Template: Complete Guide for Indian IT Companies",
     "Free SLA template and complete guide for Indian IT companies. Covers uptime guarantees, penalty structures, escalation procedures, KPI metrics, and Indian legal compliance.",
+    "article",
   );
 
   useEffect(() => {

@@ -181,6 +181,22 @@ export default function CheckerPage() {
           )}
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Free Contract Clause Checker",
+            description: "Paste a contract clause and see which terms are risky or one-sided, with plain-English explanations. Free contract clause checker for Indian businesses.",
+            url: "https://contracts.doaide.com/checker",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+            creator: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+          }),
+        }}
+      />
     </div>
   );
 }

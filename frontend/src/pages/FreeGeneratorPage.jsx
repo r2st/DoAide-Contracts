@@ -171,6 +171,22 @@ export default function FreeGeneratorPage() {
           )}
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Free Contract Generator",
+            description: "Create a contract in about a minute: pick a template, answer a few questions and download a ready-to-sign agreement drafted for Indian law.",
+            url: "https://contracts.doaide.com/generator",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+            creator: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+          }),
+        }}
+      />
     </div>
   );
 }

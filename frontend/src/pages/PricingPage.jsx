@@ -238,6 +238,19 @@ export default function PricingPage() {
           <p>Need a custom plan? <a href="mailto:contracts@doaide.com">Contact us</a></p>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "DoAide Contracts Pricing",
+            description: "DoAide Contracts pricing: free contract templates and tools, plus paid plans for AI contract review and unlimited generation.",
+            url: "https://contracts.doaide.com/pricing",
+            publisher: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+          }),
+        }}
+      />
     </div>
   );
 }

@@ -344,7 +344,7 @@ export default function VersionHistoryPage() {
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-            author: { "@type": "Organization", name: "Apprend Technologies", url: "https://doaide.com" },
+            author: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
           }),
         }}
       />

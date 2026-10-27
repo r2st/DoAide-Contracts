@@ -6,6 +6,7 @@ export default function ServiceLevelAgreementGuide() {
   usePageTitle(
     "Service Level Agreement (SLA) Guide — IT & Business Services India",
     "What to put in a service level agreement for IT and business services in India: service scope, uptime targets, response times, penalties and exits.",
+    "article",
   );
 
   return (

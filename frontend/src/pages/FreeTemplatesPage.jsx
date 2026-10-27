@@ -132,6 +132,20 @@ export default function FreeTemplatesPage() {
           </div>
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Free Contract Templates India 2026",
+            description: "Free contract templates for Indian businesses: NDA, employment, rental, partnership, freelancer, consulting and more.",
+            url: "https://contracts.doaide.com/templates",
+            publisher: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+            inLanguage: "en-IN",
+          }),
+        }}
+      />
     </div>
   );
 }

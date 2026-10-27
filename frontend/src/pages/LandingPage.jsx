@@ -229,7 +229,10 @@ function ReferralBanner() {
 }
 
 export default function LandingPage() {
-  usePageTitle("Free Contract Templates & Generator for Indian Businesses");
+  usePageTitle(
+    "Free Contract Templates & Generator for Indian Businesses",
+    "Free contract templates and generator for Indian businesses. NDA, Employment, Rental, Freelancer, Partnership, Consulting, Vendor, Non-Compete agreements — generate in 60 seconds. AI-powered risk analysis. No sign-up required.",
+  );
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
 

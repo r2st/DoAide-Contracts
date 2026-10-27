@@ -11,7 +11,7 @@ export default function MarkdownPost() {
   const navigate = useNavigate();
   const post = getMarkdownPost(slug);
 
-  usePageTitle(post?.title || "Article not found", post?.description);
+  usePageTitle(post?.title || "Article not found", post?.description, "article");
 
   useEffect(() => {
     if (!post) return;

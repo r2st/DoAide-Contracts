@@ -6,6 +6,7 @@ export default function FreelancerAgreementGuide() {
   usePageTitle(
     "Freelancer Agreement Guide — Protect Your Business in India",
     "How businesses in India should draft freelancer agreements: scope of work, payment terms, IP ownership, confidentiality and termination clauses.",
+    "article",
   );
 
   return (

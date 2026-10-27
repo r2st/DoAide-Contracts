@@ -65,6 +65,19 @@ export default function EmbedPage() {
           </div>
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Embed Contract Generator Widget",
+            description: "Add a free contract generator widget to your website. Copy one snippet to let your visitors create NDAs and agreements drafted for Indian law.",
+            url: "https://contracts.doaide.com/embed",
+            publisher: { "@type": "Organization", name: "DoAide", url: "https://doaide.com" },
+          }),
+        }}
+      />
     </div>
   );
 }
